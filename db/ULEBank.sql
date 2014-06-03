@@ -11,6 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -21,6 +22,10 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `Ulebank` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `Ulebank`;
+
+
+GRANT ALL ON Ulebank.* TO springappuser@'%' IDENTIFIED BY 'pspringappuser';
+GRANT ALL ON Ulebank.* TO springappuser@localhost IDENTIFIED BY 'pspringappuser';
 
 -- --------------------------------------------------------
 
@@ -276,12 +281,18 @@ CREATE TABLE IF NOT EXISTS `Loans` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Offices`
+-- Table structure for table `Office`
 --
 
-DROP TABLE IF EXISTS `Offices`;
-CREATE TABLE IF NOT EXISTS `Offices` (
-  `officeID` varchar(32) COLLATE utf8_bin NOT NULL
+DROP TABLE IF EXISTS `office`;
+CREATE TABLE IF NOT EXISTS `office` ( 
+  	id INTEGER PRIMARY KEY COLLATE utf8_bin NOT NULL,
+	idOffice varchar(4),
+	address varchar(50),
+ 	balance decimal(15,2),
+ 	utilitiesCost decimal(15,2),
+	localCost decimal(15,2),
+	employeeCost decimal(15,2)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Oficinas del banco';
 
 -- --------------------------------------------------------
