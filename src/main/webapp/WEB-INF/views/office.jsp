@@ -30,6 +30,15 @@
 	<b>Employee costs: </b>
 	<c:out value="${office.getEmployeeCost()}" />
 	<br>
+	<b>City: </b>
+	<c:out value="${office.getCity()}" />
+	<br>
+	<b>PostCode: </b>
+	<c:out value="${office.getPostCode()}" />
+	<br>
+	<b>Telephone: </b>
+	<c:out value="${office.getTelephone()}" />
+	<br>
 	<br>
 	<br>
 	<br>

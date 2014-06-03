@@ -292,7 +292,10 @@ CREATE TABLE IF NOT EXISTS `office` (
  	balance decimal(15,2),
  	utilitiesCost decimal(15,2),
 	localCost decimal(15,2),
-	employeeCost decimal(15,2)
+	employeeCost decimal(15,2),
+	city varchar(15),
+	postCode varchar(5),
+	telephone varchar(15)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Oficinas del banco';
 
 -- --------------------------------------------------------

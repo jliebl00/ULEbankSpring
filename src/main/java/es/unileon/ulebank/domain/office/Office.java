@@ -33,6 +33,9 @@ public class Office implements Serializable {
 	private Double utilitiesCost;
 	private Double localCost;
 	private Double employeeCost;
+	private String city;
+	private String postCode;
+	private String telephone;
 
 	public Integer getId() {
 		return id;
@@ -88,6 +91,30 @@ public class Office implements Serializable {
 
 	public void setEmployeeCost(Double employeeCost) {
 		this.employeeCost = employeeCost;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public String toString() {
