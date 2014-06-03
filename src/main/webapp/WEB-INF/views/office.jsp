@@ -1,0 +1,41 @@
+<%@ include file="/WEB-INF/views/include.jsp"%>
+
+<html>
+
+<head>
+<title><fmt:message key="title" /></title>
+</head>
+<body>
+	<h1>
+		<fmt:message key="heading" />
+	</h1>
+	<p>
+		<fmt:message key="greeting" />
+	</p>
+	<h3>Offices</h3>
+
+
+	<b>Calle: </b>
+	<c:out value="${office.getAddress()}" />
+	<br>
+	<b>Balance: </b>
+	<c:out value="${office.getBalance()}" />
+	<br>
+	<b>Utilities costs: </b>
+	<c:out value="${office.getUtilitiesCost()}" />
+	<br>
+	<b>Local costs: </b>
+	<c:out value="${office.getLocalCost()}" />
+	<br>
+	<b>Employee costs: </b>
+	<c:out value="${office.getEmployeeCost()}" />
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="<c:url value="searcher.htm"/>">Searcher</a>
+	<br>
+	<a href="<c:url value="startpage.htm"/>">Home</a>
+	<br>
+</body>
+</html>

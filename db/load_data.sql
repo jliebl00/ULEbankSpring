@@ -1,0 +1,3 @@
+INSERT INTO office (id, idOffice, address, balance, utilitiesCost, localCost, employeeCost) values(1, '7654', 'Quevedo', 57821.26, 3034.58, 15500.00, 25078.08);
+INSERT INTO office (id, idOffice, address, balance, utilitiesCost, localCost, employeeCost) values(2, '5678', 'Calle ancha', 2450.71, 1060.56, 10000.00, 14321.97);
+INSERT INTO office (id, idOffice, address, balance, utilitiesCost, localCost, employeeCost) values(3, '8910', 'Eras', 12060.16, 2351.77, 12900.00, 17098.00);
