@@ -30,9 +30,18 @@ public class Office implements Serializable {
 	 */
 	private String address;
 	private Double balance;
-	private Double utilitiesCost;
-	private Double localCost;
-	private Double employeeCost;
+	/**
+	 * The costs of the local of the office
+	 */
+	private double localCost;
+	/**
+	 * The costs of the light, water and gas of the office
+	 */
+	private double utilitiesCost;
+	/**
+	 * The expenses in the salaries of the employees
+	 */
+	private double employeeCost;
 	private String city;
 	private String postCode;
 	private String telephone;
@@ -89,8 +98,14 @@ public class Office implements Serializable {
 		return employeeCost;
 	}
 
-	public void setEmployeeCost(Double employeeCost) {
-		this.employeeCost = employeeCost;
+	/**
+	 * Sets the cost of employees
+	 * 
+	 * @param employeeCost
+	 *            the amount to set
+	 */
+	public void setEmployeeCost(double employeeCost) {
+		this.employeeCost = round(employeeCost, 4);
 	}
 
 	public String getCity() {
@@ -116,7 +131,30 @@ public class Office implements Serializable {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-
+	/**
+	 * Returns the total expenses
+	 * 
+	 * @return total expenses
+	 */
+	public double getTotalExpenses() {
+		double total = this.localCost + this.utilitiesCost + this.employeeCost;
+		total = round(total, 4);
+		return total;
+	}
+	/**
+	 * Rounds a number to any decimals
+	 * 
+	 * @param number
+	 *            the number to be rounded
+	 * @param decimals
+	 *            the number of decimal digits we want to round
+	 * @return the rounded number
+	 */
+	public double round(double number, int decimals) {
+		return Math.round(number * Math.pow(10, decimals))
+				/ Math.pow(10, decimals);
+	}
+	
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Address: " + address + ";");

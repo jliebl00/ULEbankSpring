@@ -9,4 +9,6 @@ public interface OfficeManager extends Serializable {
 	public Office searchOffice(String id);
 
 	public List<Office> getOffices();
+	
+	public void employeeCostModify(double amount);
 }

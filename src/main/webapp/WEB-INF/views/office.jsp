@@ -30,6 +30,9 @@
 	<b>Employee costs: </b>
 	<c:out value="${office.getEmployeeCost()}" />
 	<br>
+	<b>Total expenses: </b>
+	<c:out value="${office.getTotalExpenses()}" />
+	<br>	
 	<b>City: </b>
 	<c:out value="${office.getCity()}" />
 	<br>
@@ -45,6 +48,8 @@
 	<a href="<c:url value="searcher.htm"/>">Searcher</a>
 	<br>
 	<a href="<c:url value="startpage.htm"/>">Home</a>
+	<br>
+	<a href="<c:url value="costmodify.htm?previous=${office.getEmployeeCost}"/>">Modify Cost</a>
 	<br>
 </body>
 </html>
