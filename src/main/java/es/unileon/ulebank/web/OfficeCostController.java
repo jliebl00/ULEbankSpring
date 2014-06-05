@@ -1,7 +1,6 @@
 package es.unileon.ulebank.web;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,34 +16,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import es.unileon.ulebank.service.OfficeManager;
+
 /**
+ * Class that handles requests to the page that shows information about one office
  * 
- * @author patricia
- *
+ * @author rut
+ * 
  */
 @Controller
-public class OfficesController {
-
+public class OfficeCostController {
 	protected final Log logger = LogFactory.getLog(getClass());
 
 	@Autowired
 	private OfficeManager officeManager;
 
-	@RequestMapping(value = "/officeslist.htm")
+	@RequestMapping(value = "/office.htm")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		String now = (new Date()).toString();
-		logger.info("Returning officeslist view with " + now);
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("office", this.officeManager.getOffice());
+		//myModel.put("expenses", this.officeManager.getOffice()
+			//	.getTotalExpenses());
 
-		Map<String, Object> myModel = new HashMap<String, Object>();
-		myModel.put("now", now);
-		myModel.put("offices", this.officeManager.getOffices());
-
-		return new ModelAndView("officeslist", "model", myModel);
+		return new ModelAndView("office", "model", model);
 	}
 
 	public void setOfficeManager(OfficeManager officeManager) {
 		this.officeManager = officeManager;
 	}
+
 }

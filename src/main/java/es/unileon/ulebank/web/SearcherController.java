@@ -21,7 +21,11 @@ import org.apache.commons.logging.LogFactory;
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.service.*;
-
+/**
+ * 
+ * @author patricia
+ *
+ */
 @Controller
 @RequestMapping(value = "/searcher.htm")
 public class SearcherController {
@@ -52,9 +56,13 @@ public class SearcherController {
 			logger.info("Search office with id " + id + ".");
 
 			Office office = this.officeManager.searchOffice(id);
+			Map<String, Object> model = new HashMap<String, Object>();
+			model.put("office", office);
+			
+			
 
 			if (office != null) {
-				return new ModelAndView("office", "office", office);
+				return new ModelAndView("office", "model", model);
 			} else {
 
 				String now = (new Date()).toString();

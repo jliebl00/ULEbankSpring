@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title><fmt:message key="title" /></title>
+
 <style>
 .error {
 	color: red;
@@ -11,8 +11,8 @@
 </style>
 </head>
 <body>
-<h1>
-		<fmt:message key="heading" />
+	<h1>
+		<fmt:message key="title" />
 	</h1>
 	<h3>
 		<fmt:message key="searcher.heading" />

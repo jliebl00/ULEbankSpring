@@ -18,4 +18,14 @@ public class InMemoryOfficeDao implements OfficeDao {
 
 	public void saveOffice(Office off) {
 	}
+
+	public void setOffice(Office off) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Office getOffice() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

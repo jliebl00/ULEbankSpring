@@ -12,14 +12,18 @@
 </head>
 <body>
 	<h1>
-		<fmt:message key="costmodify.heading" />
+		<fmt:message key="title" />
 	</h1>
+	<h3>
+		<fmt:message key="costmodify.heading" />
+	</h3>
 
 
 	<form:form method="post" commandName="employeeCostModify">
-		
+
 		<table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0"
-			cellpadding="5"><br> 
+			cellpadding="5">
+			<br>
 			<td align="right" width="40%">Previous employee cost:</td>
 			<td align="right" width="20%"><%=request.getParameter("previous")%>E</td>
 			<br>

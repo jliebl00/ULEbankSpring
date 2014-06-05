@@ -8,14 +8,20 @@ import org.springframework.stereotype.Component;
 
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.OfficeDao;
-
+/**
+ * 
+ * @author patricia
+ *
+ */
 @Component
 public class Bank implements OfficeManager {
 
 	private static final long serialVersionUID = 1L;
 	private List<Office> offices = new ArrayList<Office>();
+	
 	@Autowired
 	private OfficeDao officeDao;
+	
 
 	public List<Office> getOffices() {
 		return officeDao.getOfficeList();
@@ -41,14 +47,14 @@ public class Bank implements OfficeManager {
 				i++;
 			}
 		}
-	//	officeDao.saveOffice(office);
+		officeDao.setOffice(office);
 		return office;
 	}
 
-	public void employeeCostModify(double amount) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
+
+	
 	
 	/**
 	 * Modifies the employee cost of a office
@@ -56,7 +62,7 @@ public class Bank implements OfficeManager {
 	 * @param amount
 	 *            the amount
 	 */
-	/**public void employeeCostModify(double amount) {
+	public void employeeCostModify(double amount) {
 
 		Office office = officeDao.getOffice();
 		if (office != null) {
@@ -65,6 +71,11 @@ public class Bank implements OfficeManager {
 
 		}
 
+	}	
+
+	public Office getOffice() {
+		
+		return officeDao.getOffice();
 	}
-	*/
+	
 }

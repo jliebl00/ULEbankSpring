@@ -2,45 +2,41 @@
 
 <html>
 
-<head>
-<title><fmt:message key="title" /></title>
-</head>
+
 <body>
+
 	<h1>
-		<fmt:message key="heading" />
+		<fmt:message key="title" />
 	</h1>
-	<p>
-		<fmt:message key="greeting" />
-	</p>
-	<h3>Offices</h3>
+	<h3>Office</h3>
 
 
-	<b>Calle: </b>
-	<c:out value="${office.getAddress()}" />
+	<b>Address: </b>
+	<c:out value="${model.office.address}" />
 	<br>
 	<b>Balance: </b>
-	<c:out value="${office.getBalance()}" />
+	<c:out value="${model.office.balance}" />
 	<br>
 	<b>Utilities costs: </b>
-	<c:out value="${office.getUtilitiesCost()}" />
+	<c:out value="${model.office.utilitiesCost}" />
 	<br>
 	<b>Local costs: </b>
-	<c:out value="${office.getLocalCost()}" />
+	<c:out value="${model.office.localCost}" />
 	<br>
 	<b>Employee costs: </b>
-	<c:out value="${office.getEmployeeCost()}" />
+	<c:out value="${model.office.employeeCost}" />
 	<br>
 	<b>Total expenses: </b>
-	<c:out value="${office.getTotalExpenses()}" />
-	<br>	
+	<c:out value="${model.office.totalExpenses}" />
+	<br>
 	<b>City: </b>
-	<c:out value="${office.getCity()}" />
+	<c:out value="${model.office.city}" />
 	<br>
 	<b>PostCode: </b>
-	<c:out value="${office.getPostCode()}" />
+	<c:out value="${model.office.postCode}" />
 	<br>
 	<b>Telephone: </b>
-	<c:out value="${office.getTelephone()}" />
+	<c:out value="${model.office.telephone}" />
 	<br>
 	<br>
 	<br>
@@ -49,7 +45,9 @@
 	<br>
 	<a href="<c:url value="startpage.htm"/>">Home</a>
 	<br>
-	<a href="<c:url value="costmodify.htm?previous=${office.getEmployeeCost}"/>">Modify Cost</a>
+	<a
+		href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify
+		Cost</a>
 	<br>
 </body>
 </html>

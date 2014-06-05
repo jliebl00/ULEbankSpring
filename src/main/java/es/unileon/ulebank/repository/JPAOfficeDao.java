@@ -9,11 +9,16 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.unileon.ulebank.domain.office.*;
-
+/**
+ * 
+ * @author patricia
+ *
+ */
 @Repository(value = "officeDao")
 public class JPAOfficeDao implements OfficeDao {
 
     private EntityManager em = null;
+    private Office office;
 
     /*
      * Sets the entity manager.
@@ -33,5 +38,16 @@ public class JPAOfficeDao implements OfficeDao {
     public void saveOffice(Office off) {
         em.merge(off);
     }
+
+	public Office getOffice() {
+		return office;
+	}
+
+	public void setOffice(Office office) {
+		this.office = office;
+	}
+	
+    
+    
 
 }
