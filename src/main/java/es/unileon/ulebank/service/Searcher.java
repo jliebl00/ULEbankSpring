@@ -14,6 +14,16 @@ public class Searcher {
 
 	private String address;
 	private String id;
+	private String officeID;
+
+	public String getOfficeID() {
+		return officeID;
+	}
+
+	public void setOfficeID(String officeID) {
+		this.officeID = officeID;
+		logger.info("Officeid set to " + officeID);
+	}
 
 	public String getAddress() {
 		return this.address;

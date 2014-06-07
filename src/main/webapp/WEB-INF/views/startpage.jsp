@@ -15,7 +15,8 @@
 	</p>
 	<h3>Options</h3>
 	<br>
-	<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
+	<a href="<c:url value="officeslist.htm"/>">Search Offices</a><br/>
+	<a href="<c:url value="hello.htm"/> "> Show accounts from an office</a>
 	<br>
 </body>
 </html>

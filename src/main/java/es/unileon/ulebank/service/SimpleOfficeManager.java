@@ -6,15 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import es.unileon.ulebank.domain.account.Account;
+import es.unileon.ulebank.domain.handler.Handler;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.OfficeDao;
-/**
- * 
- * @author patricia
- *
- */
+
+
 @Component
-public class Bank implements OfficeManager {
+public class SimpleOfficeManager implements OfficeManager {
 
 	private static final long serialVersionUID = 1L;
 	private List<Office> offices = new ArrayList<Office>();
@@ -76,6 +75,19 @@ public class Bank implements OfficeManager {
 	public Office getOffice() {
 		
 		return officeDao.getOffice();
+	}
+
+	@Override
+	public List<Account> getAccountList(Handler officeID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Office findOffice(Handler officeId) {
+		Office office = officeDao.findOffice(officeId.toString());
+        
+		return office; 
 	}
 	
 }

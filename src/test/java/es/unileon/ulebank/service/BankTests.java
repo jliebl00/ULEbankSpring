@@ -13,7 +13,7 @@ import es.unileon.ulebank.repository.*;
 
 public class BankTests {
 
-	private Bank bank;
+	private SimpleOfficeManager bank;
 
 	private List<Office> offices;
 
@@ -29,7 +29,7 @@ public class BankTests {
 
 	@Before
 	public void setUp() throws Exception {
-		bank = new Bank();
+		bank = new SimpleOfficeManager();
 		offices = new ArrayList<Office>();
 
 		// stub up a list of products
@@ -51,7 +51,7 @@ public class BankTests {
 
 	@Test
 	public void testGetOfficesWithNoOffices() {
-		bank = new Bank();
+		bank = new SimpleOfficeManager();
 		bank.setOfficeDao(new InMemoryOfficeDao(null));
 		assertNull(bank.getOffices());
 	}

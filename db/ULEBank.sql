@@ -30,18 +30,30 @@ GRANT ALL ON Ulebank.* TO springappuser@localhost IDENTIFIED BY 'pspringappuser'
 -- --------------------------------------------------------
 
 --
+-- Table structure for table "Bank"
+--
+
+DROP TABLE IF EXISTS `Bank`;
+CREATE TABLE IF NOT EXISTS `Bank` (
+  `bankID` varchar(4) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`bankID`))
+ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Banco';
+
+--
 -- Table structure for table `Accounts`
 --
 
 DROP TABLE IF EXISTS `Accounts`;
 CREATE TABLE IF NOT EXISTS `Accounts` (
   `accountID` varchar(32) COLLATE utf8_bin NOT NULL,
+  `officeID` varchar(4) COLLATE utf8_bin NOT NULL,
   `balance` double NOT NULL,
   `lastLiquidationTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `liquidationFrequency` int(11) NOT NULL,
   `maxOverdraft` double NOT NULL,
-  PRIMARY KEY (`accountID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Cuentas del cliente';
+  PRIMARY KEY (`accountID`),
+  KEY (`officeID`))
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Cuentas del cliente';
 
 -- --------------------------------------------------------
 
@@ -55,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `AccountsClients` (
   `clientID` varchar(32) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`accountID`,`clientID`),
   KEY `clientID` (`clientID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: RelaciÃƒÂ³n entre cuentas y clientes';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Liabilities: Relacion entre cuentas y clientes';
 
 -- --------------------------------------------------------
 
@@ -85,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `Cards` (
   KEY `emissionFee` (`emissionFee`),
   KEY `maintenanceFee` (`maintenanceFee`),
   KEY `renovationFee` (`renovationFee`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Payments: Tarjetas de crÃƒÂ©dito/dÃƒÂ©bito';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Payments: Tarjetas de credito/debito';
 
 -- --------------------------------------------------------
 
@@ -109,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `Enterprises` (
   `enterpriseID` varchar(32) COLLATE utf8_bin NOT NULL,
   `name` varchar(32) COLLATE utf8_bin NOT NULL,
   `address` tinytext COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: Empresas cliente';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Liabilities: Empresas cliente';
 
 -- --------------------------------------------------------
 
@@ -124,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `FeeCases` (
   `triggeringConditions` varchar(256) COLLATE utf8_bin NOT NULL,
   `subject` tinytext COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`feeCaseID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: Casos de comisiones para las liquidaciones' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Liabilities: Casos de comisiones para las liquidaciones' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -136,7 +148,7 @@ DROP TABLE IF EXISTS `Histories`;
 CREATE TABLE IF NOT EXISTS `Histories` (
   `historyID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`historyID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Common: Lista de histÃƒÂ³ricos' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Common: Lista de historicos' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -151,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `HistoriesTransactions` (
   PRIMARY KEY (`historyID`,`transactionID`),
   KEY `historyID` (`historyID`),
   KEY `HistoriesTransactions_ibfk_2` (`transactionID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Common: RelaciÃƒÂ³n n-n entre historiales y transacciones';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Common: Relacion n-n entre historiales y transacciones';
 
 -- --------------------------------------------------------
 
@@ -191,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `InvestmentFundPacks` (
   PRIMARY KEY (`investmentFundPackID`),
   KEY `investmentFundID` (`investmentFundID`),
   KEY `accountID` (`accountID`,`investmentAccountID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Brokerage: Participaciones de fondos de inversiÃƒÂ³n' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Brokerage: Participaciones de fondos de inversion' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -212,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `InvestmentFunds` (
   KEY `investmentFundID` (`investmentFundID`),
   KEY `fee` (`fee`),
   KEY `cancellationFee` (`cancellationFee`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Brokerage: Fondos de inversiÃƒÂ³n';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Brokerage: Fondos de inversion';
 
 -- --------------------------------------------------------
 
@@ -240,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `LiquidationFees` (
   `accountID` varchar(32) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`liquidationFeeID`),
   KEY `accountID` (`accountID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: Comisiones de liquidaciÃƒÂ³n' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: Comisiones de liquidacion' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -276,27 +288,30 @@ CREATE TABLE IF NOT EXISTS `Loans` (
   KEY `delayedPaymentFee` (`delayedPaymentFee`),
   KEY `amortizationFee` (`amortizationFee`),
   KEY `openingFee` (`openingFee`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Assets: Lista de prÃƒÂ©stamos';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Assets: Lista de prestamos';
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Office`
+-- Table structure for table `Offices`
 --
 
-DROP TABLE IF EXISTS `office`;
-CREATE TABLE IF NOT EXISTS `office` ( 
-  	id INTEGER PRIMARY KEY COLLATE utf8_bin NOT NULL,
-	idOffice varchar(4),
-	address varchar(50),
- 	balance decimal(15,2),
- 	utilitiesCost decimal(15,2),
-	localCost decimal(15,2),
-	employeeCost decimal(15,2),
-	city varchar(15),
-	postCode varchar(5),
-	telephone varchar(15)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Oficinas del banco';
+DROP TABLE IF EXISTS `Offices`;
+CREATE TABLE IF NOT EXISTS `Offices` ( 
+  	`id` INTEGER COLLATE utf8_bin NOT NULL,
+	`officeID` varchar(4) COLLATE utf8_bin NOT NULL,
+	`bankID` varchar(4) COLLATE utf8_bin NOT NULL,
+	`address` varchar(50),
+ 	`balance` decimal(15,2),
+ 	`utilitiesCost` decimal(15,2),
+	`localCost` decimal(15,2),
+	`employeeCost` decimal(15,2),
+	`city` varchar(15),
+	`postCode` varchar(5),
+	`telephone` varchar(15),
+	PRIMARY KEY (`officeID`, `id`),
+	KEY (`bankID`))	
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Oficinas del banco';
 
 -- --------------------------------------------------------
 
@@ -314,7 +329,7 @@ CREATE TABLE IF NOT EXISTS `Persons` (
   `profession` varchar(32) COLLATE utf8_bin NOT NULL,
   `birthDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`personID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: Clientes fÃƒÂ­sicos';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Libilities: Clientes fisicos';
 
 -- --------------------------------------------------------
 
@@ -335,7 +350,7 @@ CREATE TABLE IF NOT EXISTS `ScheduledPayments` (
   `paid` tinyint(1) NOT NULL,
   PRIMARY KEY (`sheduledPayementID`),
   KEY `loanID` (`loanID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Assets: Pagos de los prÃƒÂ©stamos';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Assets: Pagos de los prestamos';
 
 -- --------------------------------------------------------
 
@@ -375,6 +390,19 @@ CREATE TABLE IF NOT EXISTS `Transactions` (
 --
 
 --
+-- Constraints for table Accounts
+--
+
+ALTER TABLE `Accounts` 
+	ADD CONSTRAINT `Accounts_ibfk_1` FOREIGN KEY (`officeID`) REFERENCES `Offices` (`officeID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- 
+-- Constraints for table Office
+--
+
+ALTER TABLE `Offices`
+	ADD CONSTRAINT `Offices_ibfk_1` FOREIGN KEY (`bankID`) REFERENCES `Bank` (`bankID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
 -- Constraints for table `AccountsClients`
 --
 ALTER TABLE `AccountsClients`

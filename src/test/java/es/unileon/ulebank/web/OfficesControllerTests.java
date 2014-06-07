@@ -8,7 +8,7 @@ import java.util.Map;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
-import es.unileon.ulebank.service.Bank;
+import es.unileon.ulebank.service.SimpleOfficeManager;
 import es.unileon.ulebank.repository.InMemoryOfficeDao;
 import es.unileon.ulebank.domain.office.Office;
 
@@ -19,11 +19,11 @@ public class OfficesControllerTests {
 		OfficesController controller = new OfficesController();
 
 		//Bank spm = new Bank("0123");
-		Bank spm = new Bank();
+		SimpleOfficeManager spm = new SimpleOfficeManager();
 		spm.setOfficeDao(new InMemoryOfficeDao(new ArrayList<Office>()));
 		controller.setOfficeManager(spm);
 
-		controller.setOfficeManager(new Bank());
+		controller.setOfficeManager(new SimpleOfficeManager());
 		ModelAndView modelAndView = controller.handleRequest(null, null);
 		assertEquals("officeslist", modelAndView.getViewName());
 		assertNotNull(modelAndView.getModel());

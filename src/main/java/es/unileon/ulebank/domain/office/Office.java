@@ -14,7 +14,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "office")
+@Table(name = "Offices")
 public class Office implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,8 +22,14 @@ public class Office implements Serializable {
 	/**
 	 * Id of the office
 	 */
-	private String idOffice;
+	
+	@Id
+	@Column(name = "officeID")
+	private String officeID;
 
+	@Column(name = "bankID")
+    private String bankID;
+	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,6 +38,7 @@ public class Office implements Serializable {
 	/**
 	 * The address of the office
 	 */
+	
 	private String address;
 	private Double balance;
 	/**
@@ -59,11 +66,11 @@ public class Office implements Serializable {
 	}
 
 	public String getIdOffice() {
-		return idOffice;
+		return officeID;
 	}
 
 	public void setIdOffice(String idOffice) {
-		this.idOffice = idOffice;
+		this.officeID = idOffice;
 	}
 
 	public String getAddress() {
@@ -135,6 +142,15 @@ public class Office implements Serializable {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+	
+	public String getBankID() {
+		return bankID;
+	}
+
+	public void setBankID(String bankID) {
+		this.bankID = bankID;
+	}
+
 	/**
 	 * Returns the total expenses
 	 * 
