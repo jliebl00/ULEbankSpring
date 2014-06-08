@@ -106,7 +106,7 @@ public class Office implements Serializable {
 	}
 
 	public String getCity() {
-		return city;
+		return this.city;
 	}
 
 	public void setCity(String city) {
@@ -114,7 +114,7 @@ public class Office implements Serializable {
 	}
 
 	public String getPostCode() {
-		return postCode;
+		return this.postCode;
 	}
 
 	public void setPostCode(String postCode) {
@@ -122,7 +122,7 @@ public class Office implements Serializable {
 	}
 
 	public String getTelephone() {
-		return telephone;
+		return this.telephone;
 	}
 
 	public void setTelephone(String telephone) {
@@ -130,7 +130,7 @@ public class Office implements Serializable {
 	}
 
 	public String getBankID() {
-		return bankID;
+		return this.bankID;
 	}
 
 	public void setBankID(String bankID) {
