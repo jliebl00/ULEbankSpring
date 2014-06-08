@@ -4,10 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 /**
  * 
  * @author patricia
@@ -22,23 +21,18 @@ public class Office implements Serializable {
 	/**
 	 * Id of the office
 	 */
-	
+
 	@Id
 	@Column(name = "officeID")
 	private String officeID;
 
 	@Column(name = "bankID")
-    private String bankID;
-	
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private String bankID;
 
 	/**
 	 * The address of the office
 	 */
-	
+
 	private String address;
 	private Double balance;
 	/**
@@ -56,14 +50,6 @@ public class Office implements Serializable {
 	private String city;
 	private String postCode;
 	private String telephone;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getIdOffice() {
 		return officeID;
@@ -142,7 +128,7 @@ public class Office implements Serializable {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-	
+
 	public String getBankID() {
 		return bankID;
 	}
@@ -161,6 +147,7 @@ public class Office implements Serializable {
 		total = round(total, 4);
 		return total;
 	}
+
 	/**
 	 * Rounds a number to any decimals
 	 * 
@@ -174,7 +161,7 @@ public class Office implements Serializable {
 		return Math.round(number * Math.pow(10, decimals))
 				/ Math.pow(10, decimals);
 	}
-	
+
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Address: " + address + ";");

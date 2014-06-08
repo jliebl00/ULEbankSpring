@@ -68,8 +68,7 @@ public class OfficeHandler implements Handler {
     }
         
         
-    @Override
-	public int compareTo(Handler another) {
+    public int compareTo(Handler another) {
 		return this.numberOffice.compareTo(another.toString());
 	}
 

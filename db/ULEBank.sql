@@ -297,8 +297,7 @@ CREATE TABLE IF NOT EXISTS `Loans` (
 --
 
 DROP TABLE IF EXISTS `Offices`;
-CREATE TABLE IF NOT EXISTS `Offices` ( 
-  	`id` INTEGER COLLATE utf8_bin NOT NULL,
+CREATE TABLE IF NOT EXISTS `Offices` (
 	`officeID` varchar(4) COLLATE utf8_bin NOT NULL,
 	`bankID` varchar(4) COLLATE utf8_bin NOT NULL,
 	`address` varchar(50),
@@ -309,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `Offices` (
 	`city` varchar(15),
 	`postCode` varchar(5),
 	`telephone` varchar(15),
-	PRIMARY KEY (`officeID`, `id`),
+	PRIMARY KEY (`officeID`),
 	KEY (`bankID`))	
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Oficinas del banco';
 
