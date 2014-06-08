@@ -49,11 +49,6 @@ public class SimpleOfficeManager implements OfficeManager {
 		officeDao.setOffice(office);
 		return office;
 	}
-
-	
-	
-
-	
 	
 	/**
 	 * Modifies the employee cost of a office
@@ -77,13 +72,11 @@ public class SimpleOfficeManager implements OfficeManager {
 		return officeDao.getOffice();
 	}
 
-	@Override
 	public List<Account> getAccountList(Handler officeID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public Office findOffice(Handler officeId) {
 		Office office = officeDao.findOffice(officeId.toString());
         

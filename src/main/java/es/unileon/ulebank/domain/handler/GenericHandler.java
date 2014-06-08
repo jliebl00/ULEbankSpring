@@ -24,7 +24,6 @@ public class GenericHandler implements Handler {
         this.id = id;
     }
 
-    @Override
     public int compareTo(Handler another) {
         return this.id.compareTo(another.toString());
     }

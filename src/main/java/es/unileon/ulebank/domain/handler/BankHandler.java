@@ -39,7 +39,6 @@ public class BankHandler implements Handler {
         }
     }
 
-    @Override
     public int compareTo(Handler another) {
         return this.toString().compareTo(another.toString());
     }
