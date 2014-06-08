@@ -1,6 +1,10 @@
 package es.unileon.ulebank.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +12,9 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.domain.account.Account;
 import es.unileon.ulebank.domain.handler.OfficeHandler;
+import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.InMemoryOfficeDao;
 import es.unileon.ulebank.repository.OfficeDao;
 
@@ -84,7 +88,7 @@ public class SimpleOfficeManagerTest {
 		Office office2 = offices.get(1);
 		assertEquals(office2.getIdOffice(), "2345");
 	}
-
+	/**
 	@Test
 	public void testGetAccounts() {
 
@@ -112,7 +116,7 @@ public class SimpleOfficeManagerTest {
 		assertEquals(officeDao.getAccountList(officeID.toString()).size(), 3);
 		;
 	}
-
+	
 	@Test
 	public void testfindOffice() {
 		OfficeHandler officeID = new OfficeHandler("1234");
@@ -125,5 +129,36 @@ public class SimpleOfficeManagerTest {
 			fail("Office list is empty.");
 		}
 	}
+	*/
+	@Test
+	public void testGetEmptyOffice() {
+		officeManager = new SimpleOfficeManager();		 
+	    officeManager.setOfficeDao(new InMemoryOfficeDao(null,null));	       
+		assertNull(officeManager.getOffice());
+	}
+	
+	@Test
+	public void testModifyCostWithNullOffice() {
+		try {
+			officeManager = new SimpleOfficeManager();
+			officeManager.setOfficeDao(new InMemoryOfficeDao(null));
+			officeManager.employeeCostModify(200.00);
 
+		} catch (NullPointerException ex) {
+			fail("Office  is null.");
+		}
+	}
+	
+	@Test
+	public void testModifyCost() {
+		Office office = officeManager.searchOffice("1234");
+		assertEquals(office,officeManager.getOffice());
+		//Office office = officeManager.getOffice();
+		System.out.println(office);
+		assertNotEquals(400.00, office.getEmployeeCost(), 0);
+		officeManager.employeeCostModify(400.00);
+		assertEquals(400.00, office.getEmployeeCost(), 0);
+
+	}
+	
 }

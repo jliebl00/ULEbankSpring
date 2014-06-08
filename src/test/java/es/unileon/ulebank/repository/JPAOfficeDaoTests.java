@@ -29,7 +29,14 @@ public class JPAOfficeDaoTests {
 		List<Office> offices = officeDao.getOfficeList();
 		assertEquals(offices.size(), 3, 0);
 	}
+	
+	@Test
+	public void testGetOffice() {
+		Office office = officeDao.getOffice();
+		assertNotNull(office);
 
+	}
+	
 	@Test
 	public void testSaveOffice() {
 		List<Office> offices = officeDao.getOfficeList();
