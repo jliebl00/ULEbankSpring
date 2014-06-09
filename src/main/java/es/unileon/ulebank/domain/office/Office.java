@@ -34,6 +34,9 @@ public class Office implements Serializable {
 	 */
 
 	private String address;
+	/**
+	 * The balance of the office
+	 */
 	private Double balance;
 	/**
 	 * The costs of the local of the office
@@ -47,94 +50,197 @@ public class Office implements Serializable {
 	 * The expenses in the salaries of the employees
 	 */
 	private double employeeCost;
+	/**
+	 * The city of the office
+	 */
 	private String city;
+	/**
+	 * The postcode of the office
+	 */
 	private String postCode;
+	/**
+	 * The telephone of the office
+	 */
 	private String telephone;
 
+	/**
+	 * Returns the officeID
+	 * 
+	 * @return officeID
+	 */
 	public String getIdOffice() {
 		return officeID;
 	}
 
-	public void setIdOffice(String idOffice) {
-		this.officeID = idOffice;
+	/**
+	 * Sets the officeID
+	 * 
+	 * @param officeID
+	 */
+	public void setIdOffice(String officeID) {
+		this.officeID = officeID;
 	}
 
+	/**
+	 * Returns the bankID
+	 * 
+	 * @return bankID
+	 */
+	public String getBankID() {
+		return this.bankID;
+	}
+
+	/**
+	 * Sets the bankID
+	 * 
+	 * @param bankID
+	 */
+	public void setBankID(String bankID) {
+		this.bankID = bankID;
+	}
+
+	/**
+	 * Returns the address
+	 * 
+	 * @return address
+	 */
 	public String getAddress() {
 		return address;
 	}
 
+	/**
+	 * Sets the address
+	 * 
+	 * @param address
+	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
+	/**
+	 * Returns the balance
+	 * 
+	 * @return balance
+	 */
 	public Double getBalance() {
 		return balance;
 	}
 
+	/**
+	 * Sets the balance
+	 * 
+	 * @param balance
+	 */
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
 
+	/**
+	 * Returns the utilitiesCost
+	 * 
+	 * @return utilitiesCost
+	 */
 	public Double getUtilitiesCost() {
 		return utilitiesCost;
 	}
 
+	/**
+	 * Sets the utilitiesCost
+	 * 
+	 * @param utilitiesCost
+	 */
 	public void setUtilitiesCost(Double utilitiesCost) {
 		this.utilitiesCost = utilitiesCost;
 	}
 
+	/**
+	 * Returns the localCost
+	 * 
+	 * @return localCost
+	 */
 	public Double getLocalCost() {
 		return localCost;
 	}
 
+	/**
+	 * Sets the localCost
+	 * 
+	 * @param localCost
+	 */
 	public void setLocalCost(Double localCost) {
 		this.localCost = localCost;
 	}
 
+	/**
+	 * Returns the employeeCost
+	 * 
+	 * @return employeeCost
+	 */
 	public Double getEmployeeCost() {
 		return employeeCost;
 	}
 
 	/**
-	 * Sets the cost of employees
+	 * Sets the employeeCost
 	 * 
 	 * @param employeeCost
-	 *            the amount to set
 	 */
 	public void setEmployeeCost(double employeeCost) {
 		this.employeeCost = round(employeeCost, 4);
 	}
 
+	/**
+	 * Returns the city
+	 * 
+	 * @return city
+	 */
 	public String getCity() {
 		return this.city;
 	}
 
+	/**
+	 * Sets the city
+	 * 
+	 * @param city
+	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
 
+	/**
+	 * Returns the postCode
+	 * 
+	 * @return postCode
+	 */
 	public String getPostCode() {
 		return this.postCode;
 	}
 
+	/**
+	 * Sets the postCode
+	 * 
+	 * @param postCode
+	 */
 	public void setPostCode(String postCode) {
 		this.postCode = postCode;
 	}
 
+	/**
+	 * Returns the telephone
+	 * 
+	 * @return telephone
+	 */
 	public String getTelephone() {
 		return this.telephone;
 	}
 
+	/**
+	 * Sets the telephone
+	 * 
+	 * @param telephone
+	 */
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
-	}
-
-	public String getBankID() {
-		return this.bankID;
-	}
-
-	public void setBankID(String bankID) {
-		this.bankID = bankID;
 	}
 
 	/**
@@ -162,6 +268,9 @@ public class Office implements Serializable {
 				/ Math.pow(10, decimals);
 	}
 
+	/**
+	 * toString method
+	 */
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Address: " + address + ";");
