@@ -43,7 +43,7 @@ public class SearcherController {
 
 		String id = searcher.getId();
 
-		if (id == "" || id == null) {
+		if (id.equals("") || id.equals(null)) {
 
 			String now = (new Date()).toString();
 			logger.info("Returning officeslist view with " + now);
