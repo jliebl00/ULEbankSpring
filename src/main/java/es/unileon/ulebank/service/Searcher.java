@@ -11,7 +11,7 @@ import org.apache.commons.logging.LogFactory;
 public class Searcher {
 
 	/** Logger for this class and subclasses */
-	private static final Log logger = LogFactory.getLog(Searcher.class
+	private static final Log LOGGER = LogFactory.getLog(Searcher.class
 			.getName());
 
 	private String address;
@@ -24,7 +24,7 @@ public class Searcher {
 
 	public void setOfficeID(String officeID) {
 		this.officeID = officeID;
-		logger.info("Officeid set to " + officeID);
+		LOGGER.info("Officeid set to " + officeID);
 	}
 
 	public String getAddress() {
@@ -33,7 +33,7 @@ public class Searcher {
 
 	public void setAddress(String address) {
 		this.address = address;
-		logger.info("Address set to " + address);
+		LOGGER.info("Address set to " + address);
 	}
 
 	public String getId() {
@@ -42,7 +42,7 @@ public class Searcher {
 
 	public void setId(String id) {
 		this.id = id;
-		logger.info("Id set to " + id);
+		LOGGER.info("Id set to " + id);
 	}
 
 }

@@ -39,24 +39,6 @@ public class Account {
 	}
 
 	/**
-	 * Returns the officeID
-	 * 
-	 * @return officeID
-	 */
-	public String getOfficeID() {
-		return officeID;
-	}
-
-	/**
-	 * Sets the officeID
-	 * 
-	 * @param officeID
-	 */
-	public void setOfficeID(String officeID) {
-		this.officeID = officeID;
-	}
-
-	/**
 	 * Returns the accountID
 	 * 
 	 * @return accountID
@@ -72,5 +54,23 @@ public class Account {
 	 */
 	public void setAccountID(String accountID) {
 		this.accountID = accountID;
+	}
+
+	/**
+	 * Returns the officeID
+	 * 
+	 * @return officeID
+	 */
+	public String getOfficeID() {
+		return officeID;
+	}
+
+	/**
+	 * Sets the officeID
+	 * 
+	 * @param officeID
+	 */
+	public void setOfficeID(String officeID) {
+		this.officeID = officeID;
 	}
 }
