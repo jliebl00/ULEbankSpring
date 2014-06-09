@@ -18,15 +18,16 @@ import org.springframework.web.servlet.ModelAndView;
 import es.unileon.ulebank.service.OfficeManager;
 
 /**
- * Class that handles requests to the page that shows information about one office
+ * Class that handles requests to the page that shows information about one
+ * office
  * 
  * @author rut
  * 
  */
 @Controller
 public class OfficeCostController {
-	protected final Log logger = LogFactory.getLog(getClass());
-
+	private static final Log logger = LogFactory
+			.getLog(OfficeCostController.class.getName());
 	@Autowired
 	private OfficeManager officeManager;
 
@@ -36,9 +37,9 @@ public class OfficeCostController {
 
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("office", this.officeManager.getOffice());
-		//myModel.put("expenses", this.officeManager.getOffice()
-			//	.getTotalExpenses());
-
+		// myModel.put("expenses", this.officeManager.getOffice()
+		// .getTotalExpenses());
+		logger.info("Returning office view");
 		return new ModelAndView("office", "model", model);
 	}
 

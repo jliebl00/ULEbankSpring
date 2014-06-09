@@ -21,6 +21,7 @@ import org.apache.commons.logging.LogFactory;
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.service.*;
+
 /**
  * 
  * @author patricia
@@ -31,8 +32,8 @@ import es.unileon.ulebank.service.*;
 public class SearcherController {
 
 	/** Logger for this class and subclasses */
-	protected final Log logger = LogFactory.getLog(getClass());
-
+	private static final Log logger = LogFactory
+			.getLog(SearcherController.class.getName());
 	@Autowired
 	private OfficeManager officeManager;
 
@@ -58,8 +59,6 @@ public class SearcherController {
 			Office office = this.officeManager.searchOffice(id);
 			Map<String, Object> model = new HashMap<String, Object>();
 			model.put("office", office);
-			
-			
 
 			if (office != null) {
 				return new ModelAndView("office", "model", model);

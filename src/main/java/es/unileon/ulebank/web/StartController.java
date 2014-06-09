@@ -22,8 +22,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class StartController {
-	protected final Log logger = LogFactory.getLog(getClass());
-	
+	private static final Log logger = LogFactory.getLog(StartController.class
+			.getName());
+
 	@RequestMapping(value = "/startpage.htm")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

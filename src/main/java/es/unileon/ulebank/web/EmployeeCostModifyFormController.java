@@ -16,7 +16,7 @@ import es.unileon.ulebank.service.EmployeeCostModify;
 import es.unileon.ulebank.service.OfficeManager;
 
 /**
- * Class  handles requests to the page that changes the employee cost called
+ * Class handles requests to the page that changes the employee cost called
  * costmodify
  * 
  * @author rut
@@ -27,7 +27,8 @@ import es.unileon.ulebank.service.OfficeManager;
 public class EmployeeCostModifyFormController {
 
 	/** Logger for this class and subclasses */
-	protected final Log logger = LogFactory.getLog(getClass());
+	private static final Log logger = LogFactory
+			.getLog(EmployeeCostModifyFormController.class.getName());
 
 	@Autowired
 	private OfficeManager officeManager;

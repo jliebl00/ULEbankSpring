@@ -13,20 +13,26 @@ import org.apache.commons.logging.LogFactory;
  */
 public class EmployeeCostModify {
 	/** Logger for this class and subclasses */
-	protected final Log logger = LogFactory.getLog(getClass());
+	private static final Log logger = LogFactory
+			.getLog(EmployeeCostModify.class.getName());
 
 	@Min(0)
 	private double amount;
+
 	/**
 	 * Sets the amount
-	 * @param i the amount 
+	 * 
+	 * @param i
+	 *            the amount
 	 */
 	public void setAmount(double i) {
 		amount = i;
 		logger.info(" Employee Cost set to " + i);
 	}
+
 	/**
 	 * Returns the amount
+	 * 
 	 * @return the amount
 	 */
 	public double getAmount() {

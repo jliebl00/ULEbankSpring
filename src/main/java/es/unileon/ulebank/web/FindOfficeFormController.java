@@ -27,7 +27,8 @@ import es.unileon.ulebank.service.Searcher;
 @Controller
 @RequestMapping(value = "/find.htm")
 public class FindOfficeFormController {
-	protected final Log logger = LogFactory.getLog(getClass());
+	private static final Log logger = LogFactory
+			.getLog(FindOfficeFormController.class.getName());
 
 	@Autowired
 	private OfficeManager officeManager;

@@ -2,6 +2,7 @@ package es.unileon.ulebank.service;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 /**
  * 
  * @author patricia
@@ -10,7 +11,8 @@ import org.apache.commons.logging.LogFactory;
 public class Searcher {
 
 	/** Logger for this class and subclasses */
-	protected final Log logger = LogFactory.getLog(getClass());
+	private static final Log logger = LogFactory.getLog(Searcher.class
+			.getName());
 
 	private String address;
 	private String id;

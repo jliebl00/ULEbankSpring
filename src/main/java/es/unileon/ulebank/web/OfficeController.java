@@ -1,6 +1,5 @@
 package es.unileon.ulebank.web;
 
-
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -16,33 +15,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import es.unileon.ulebank.service.OfficeManager;
 
 @Controller
 public class OfficeController {
 
-    protected final Log logger = LogFactory.getLog(getClass());
+	private static final Log logger = LogFactory.getLog(OfficeController.class
+			.getName());
+	@Autowired
+	private OfficeManager officeManager;
 
-    @Autowired
-    private OfficeManager officeManager;
+	@RequestMapping(value = "/hello.htm")
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
-    @RequestMapping(value="/hello.htm")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+		String now = (new Date()).toString();
+		logger.info("Returning hello view with " + now);
 
-    	String now = (new Date()).toString();
-        logger.info("Returning hello view with " + now);
+		Map<String, Object> myModel = new HashMap<String, Object>();
+		myModel.put("now", now);
+		myModel.put("offices", this.officeManager.getOffices());
 
-        Map<String, Object> myModel = new HashMap<String, Object>();
-        myModel.put("now", now);
-        myModel.put("offices", this.officeManager.getOffices());
+		return new ModelAndView("hello", "model", myModel);
+	}
 
-        return new ModelAndView("hello", "model", myModel);
-    }
-
-
-    public void setOfficeManager(OfficeManager officeManager) {
-        this.officeManager = officeManager;
-    }
+	public void setOfficeManager(OfficeManager officeManager) {
+		this.officeManager = officeManager;
+	}
 }

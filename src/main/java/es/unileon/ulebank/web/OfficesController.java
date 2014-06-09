@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import es.unileon.ulebank.service.OfficeManager;
+
 /**
  * 
  * @author patricia
@@ -25,8 +26,8 @@ import es.unileon.ulebank.service.OfficeManager;
 @Controller
 public class OfficesController {
 
-	protected final Log logger = LogFactory.getLog(getClass());
-
+	private static final Log logger = LogFactory.getLog(OfficesController.class
+			.getName());
 	@Autowired
 	private OfficeManager officeManager;
 
