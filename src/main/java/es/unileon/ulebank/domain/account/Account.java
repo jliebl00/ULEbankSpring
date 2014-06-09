@@ -25,7 +25,7 @@ public class Account {
 	@Column(name = "accountID")
 	private String accountID;
 
-	public String officeID;
+	private String officeID;
 
 	public String getOfficeID() {
 		return officeID;

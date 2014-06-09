@@ -37,8 +37,6 @@ public class OfficeCostController {
 
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("office", this.officeManager.getOffice());
-		// myModel.put("expenses", this.officeManager.getOffice()
-		// .getTotalExpenses());
 		logger.info("Returning office view");
 		return new ModelAndView("office", "model", model);
 	}

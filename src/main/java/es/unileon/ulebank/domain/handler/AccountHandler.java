@@ -15,20 +15,6 @@ public class AccountHandler implements Handler {
 
 	private String numberAccount;
 
-	/*
-	 * public AccountHandler(int number) throws MalformedHandlerException {
-	 * 
-	 * if (number >= 0) {
-	 * 
-	 * if (Integer.toString(number).length() == 4) { this.numberAccount =
-	 * Integer.toString(number); } else { if (Integer.toString(number).length()
-	 * < 4) { this.numberAccount = Integer.toString(number); while
-	 * (numberAccount.length() <= 4) { numberAccount = 0 + numberAccount; } }
-	 * else { throw new MalformedHandlerException( "The idOffice is malformed");
-	 * } } } else { throw new MalformedHandlerException(
-	 * "The idOffice has to be a positive number"); } }
-	 */
-
 	public AccountHandler(String number) throws MalformedHandlerException {
 		if (number.length() >= 0) {
 
