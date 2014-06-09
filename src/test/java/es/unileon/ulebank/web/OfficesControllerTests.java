@@ -1,8 +1,8 @@
 package es.unileon.ulebank.web;
 
 import static org.junit.Assert.*;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.junit.Test;
@@ -16,14 +16,11 @@ public class OfficesControllerTests {
 
 	@Test
 	public void testHandleRequestView() throws Exception {
-		OfficesController controller = new OfficesController();
 
-		//Bank spm = new Bank("0123");
+		OfficesController controller = new OfficesController();
 		SimpleOfficeManager spm = new SimpleOfficeManager();
 		spm.setOfficeDao(new InMemoryOfficeDao(new ArrayList<Office>()));
 		controller.setOfficeManager(spm);
-
-		controller.setOfficeManager(new SimpleOfficeManager());
 		ModelAndView modelAndView = controller.handleRequest(null, null);
 		assertEquals("officeslist", modelAndView.getViewName());
 		assertNotNull(modelAndView.getModel());

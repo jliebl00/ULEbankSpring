@@ -24,7 +24,7 @@ import es.unileon.ulebank.service.*;
 
 /**
  * 
- * @author patricia
+ * @author Patricia
  *
  */
 @Controller
@@ -32,7 +32,7 @@ import es.unileon.ulebank.service.*;
 public class SearcherController {
 
 	/** Logger for this class and subclasses */
-	private static final Log logger = LogFactory
+	private static final Log LOGGER = LogFactory
 			.getLog(SearcherController.class.getName());
 	@Autowired
 	private OfficeManager officeManager;
@@ -43,10 +43,10 @@ public class SearcherController {
 
 		String id = searcher.getId();
 
-		if (id.equals("") || id.equals(null)) {
+		if (id.equals("") || id == null) {
 
 			String now = (new Date()).toString();
-			logger.info("Returning officeslist view with " + now);
+			LOGGER.info("Returning officeslist view with " + now);
 
 			Map<String, Object> myModel = new HashMap<String, Object>();
 			myModel.put("now", now);
@@ -54,7 +54,7 @@ public class SearcherController {
 
 			return new ModelAndView("officeslist", "model", myModel);
 		} else {
-			logger.info("Search office with id " + id + ".");
+			LOGGER.info("Search office with id " + id + ".");
 
 			Office office = this.officeManager.searchOffice(id);
 			Map<String, Object> model = new HashMap<String, Object>();
@@ -65,7 +65,7 @@ public class SearcherController {
 			} else {
 
 				String now = (new Date()).toString();
-				logger.info("Returning officeslist view with " + now);
+				LOGGER.info("Returning officeslist view with " + now);
 
 				Map<String, Object> myModel = new HashMap<String, Object>();
 				myModel.put("now", now);

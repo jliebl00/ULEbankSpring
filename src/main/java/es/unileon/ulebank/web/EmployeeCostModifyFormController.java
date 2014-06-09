@@ -27,7 +27,7 @@ import es.unileon.ulebank.service.OfficeManager;
 public class EmployeeCostModifyFormController {
 
 	/** Logger for this class and subclasses */
-	private static final Log logger = LogFactory
+	private static final Log LOGGER = LogFactory
 			.getLog(EmployeeCostModifyFormController.class.getName());
 
 	@Autowired
@@ -41,7 +41,7 @@ public class EmployeeCostModifyFormController {
 		}
 
 		double amount = employeeCostModify.getAmount();
-		logger.info("Modifiying employee cost to " + amount + "E.");
+		LOGGER.info("Modifiying employee cost to " + amount + "E.");
 
 		officeManager.employeeCostModify(amount);
 

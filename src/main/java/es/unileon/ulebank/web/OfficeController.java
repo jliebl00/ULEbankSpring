@@ -20,7 +20,7 @@ import es.unileon.ulebank.service.OfficeManager;
 @Controller
 public class OfficeController {
 
-	private static final Log logger = LogFactory.getLog(OfficeController.class
+	private static final Log LOGGER = LogFactory.getLog(OfficeController.class
 			.getName());
 	@Autowired
 	private OfficeManager officeManager;
@@ -30,7 +30,7 @@ public class OfficeController {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String now = (new Date()).toString();
-		logger.info("Returning hello view with " + now);
+		LOGGER.info("Returning hello view with " + now);
 
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);

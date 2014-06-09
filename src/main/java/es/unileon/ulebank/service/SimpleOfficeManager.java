@@ -11,16 +11,14 @@ import es.unileon.ulebank.domain.handler.Handler;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.OfficeDao;
 
-
 @Component
 public class SimpleOfficeManager implements OfficeManager {
 
 	private static final long serialVersionUID = 1L;
 	private List<Office> offices = new ArrayList<Office>();
-	
+
 	@Autowired
 	private OfficeDao officeDao;
-	
 
 	public List<Office> getOffices() {
 		return officeDao.getOfficeList();
@@ -49,7 +47,7 @@ public class SimpleOfficeManager implements OfficeManager {
 		officeDao.setOffice(office);
 		return office;
 	}
-	
+
 	/**
 	 * Modifies the employee cost of a office
 	 * 
@@ -65,10 +63,9 @@ public class SimpleOfficeManager implements OfficeManager {
 
 		}
 
-	}	
+	}
 
 	public Office getOffice() {
-		
 		return officeDao.getOffice();
 	}
 
@@ -79,8 +76,8 @@ public class SimpleOfficeManager implements OfficeManager {
 
 	public Office findOffice(Handler officeId) {
 		Office office = officeDao.findOffice(officeId.toString());
-        
-		return office; 
+
+		return office;
 	}
-	
+
 }

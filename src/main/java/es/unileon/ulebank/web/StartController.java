@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class StartController {
-	private static final Log logger = LogFactory.getLog(StartController.class
+	private static final Log LOGGER = LogFactory.getLog(StartController.class
 			.getName());
 
 	@RequestMapping(value = "/startpage.htm")
@@ -30,7 +30,7 @@ public class StartController {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String now = (new Date()).toString();
-		logger.info("Returning startpage view with " + now);
+		LOGGER.info("Returning startpage view with " + now);
 
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);

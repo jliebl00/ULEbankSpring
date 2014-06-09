@@ -26,7 +26,7 @@ import es.unileon.ulebank.service.OfficeManager;
 @Controller
 public class OfficesController {
 
-	private static final Log logger = LogFactory.getLog(OfficesController.class
+	private static final Log LOGGER = LogFactory.getLog(OfficesController.class
 			.getName());
 	@Autowired
 	private OfficeManager officeManager;
@@ -36,7 +36,7 @@ public class OfficesController {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String now = (new Date()).toString();
-		logger.info("Returning officeslist view with " + now);
+		LOGGER.info("Returning officeslist view with " + now);
 
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);

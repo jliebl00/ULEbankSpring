@@ -27,7 +27,7 @@ import es.unileon.ulebank.service.Searcher;
 @Controller
 @RequestMapping(value = "/find.htm")
 public class FindOfficeFormController {
-	private static final Log logger = LogFactory
+	private static final Log LOGGER = LogFactory
 			.getLog(FindOfficeFormController.class.getName());
 
 	@Autowired
@@ -41,7 +41,7 @@ public class FindOfficeFormController {
 		String idOffice = finder.getOfficeID();
 		System.out.println("gj " + idOffice);
 		Handler officeID = new OfficeHandler(idOffice);
-		logger.info("Search office with id " + idOffice + ".");
+		LOGGER.info("Search office with id " + idOffice + ".");
 
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		String now = (new Date()).toString();

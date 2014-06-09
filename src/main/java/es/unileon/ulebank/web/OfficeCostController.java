@@ -26,7 +26,7 @@ import es.unileon.ulebank.service.OfficeManager;
  */
 @Controller
 public class OfficeCostController {
-	private static final Log logger = LogFactory
+	private static final Log LOGGER = LogFactory
 			.getLog(OfficeCostController.class.getName());
 	@Autowired
 	private OfficeManager officeManager;
@@ -37,7 +37,7 @@ public class OfficeCostController {
 
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("office", this.officeManager.getOffice());
-		logger.info("Returning office view");
+		LOGGER.info("Returning office view");
 		return new ModelAndView("office", "model", model);
 	}
 

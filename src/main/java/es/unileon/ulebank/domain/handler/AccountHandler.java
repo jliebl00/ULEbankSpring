@@ -51,7 +51,6 @@ public class AccountHandler implements Handler {
 	 *             ( If the account number, office handler, or bank handler
 	 *             aren't correct )
 	 */
-
 	public int compareTo(Handler another) {
 		return this.toString().compareTo(another.toString());
 	}
