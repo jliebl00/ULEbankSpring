@@ -32,17 +32,12 @@ public class SimpleOfficeManagerTest {
 		accounts = new ArrayList<Account>();
 		// stub up a list of offices
 
-		Office office = new Office();
-
-		office.setIdOffice("1234");
-		office.setBankID("2104");
+		Office office = new Office("1234", "2104");
 		office.setAddress("Nocedo");
 		offices.add(office);
 
-		Office office2 = new Office();
+		Office office2 = new Office("2345", "2104");
 
-		office2.setIdOffice("2345");
-		office2.setBankID("2104");
 		office2.setAddress("Padre Isla");
 		offices.add(office2);
 

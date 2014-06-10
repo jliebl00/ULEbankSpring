@@ -16,7 +16,19 @@ public class OfficeTests {
 
 	@Before
 	public void setUp() throws Exception {
-		office = new Office();
+		office = new Office("1234", "5678");
+	}
+
+	@Test
+	public void testSetAndGetOfficeID() {
+		String testOfficeID = "1234";
+		assertEquals(testOfficeID, office.getIdOffice());
+	}
+
+	@Test
+	public void testSetAndGetBankID() {
+		String testBankID = "5678";
+		assertEquals(testBankID, office.getBankID());
 	}
 
 	@Test

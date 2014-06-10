@@ -64,6 +64,23 @@ public class Office implements Serializable {
 	private String telephone;
 
 	/**
+	 * Constructor of the class
+	 * 
+	 * @param id
+	 * @param bank
+	 */
+	public Office(String officeID, String bank) {
+		this.officeID = officeID;
+		this.bankID = bank;
+	}
+
+	/**
+	 * Default constructor
+	 */
+	public Office() {
+	}
+
+	/**
 	 * Returns the officeID
 	 * 
 	 * @return officeID
