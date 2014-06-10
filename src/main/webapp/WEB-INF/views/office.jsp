@@ -14,6 +14,9 @@
 	<b>Address: </b>
 	<c:out value="${model.office.address}" />
 	<br>
+	<b>Account: </b>
+	<c:out value="${model.office.account}" />
+	<br>
 	<b>Balance: </b>
 	<c:out value="${model.office.balance}" />
 	<br>

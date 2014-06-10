@@ -300,6 +300,7 @@ DROP TABLE IF EXISTS `Offices`;
 CREATE TABLE IF NOT EXISTS `Offices` (
 	`officeID` varchar(4) COLLATE utf8_bin NOT NULL,
 	`bankID` varchar(4) COLLATE utf8_bin NOT NULL,
+	`account` varchar(4),
 	`address` varchar(50),
  	`balance` decimal(15,2),
  	`utilitiesCost` decimal(15,2),
