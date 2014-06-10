@@ -21,21 +21,21 @@ import org.springframework.web.servlet.ModelAndView;
  *
  */
 @Controller
-public class StartController {
+public class PaymentsController {
 	private static final Log LOGGER = LogFactory.getLog(StartController.class
 			.getName());
 
-	@RequestMapping(value = "/startpage.htm")
+	@RequestMapping(value = "/payments.htm")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String now = (new Date()).toString();
-		LOGGER.info("Returning startpage view with " + now);
+		LOGGER.info("Returning payments view");
 
+		// Cambiar el modelo para lo que queráis mostrar.
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);
 
-		return new ModelAndView("startpage", "model", myModel);
+		return new ModelAndView("payments", "model", myModel);
 	}
-
 }
