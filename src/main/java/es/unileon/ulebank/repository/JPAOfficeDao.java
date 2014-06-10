@@ -13,56 +13,96 @@ import es.unileon.ulebank.domain.account.Account;
 
 /**
  * 
- * @author patricia
+ * @author Patricia
  *
  */
 @Repository(value = "officeDao")
 public class JPAOfficeDao implements OfficeDao {
 
-	private EntityManager em = null;
+	/**
+	 * EntityManager
+	 */
+	private EntityManager entityManager = null;
+	/**
+	 * Office
+	 */
 	private Office office;
 
-	/*
-	 * Sets the entity manager.
+	/**
+	 * Sets the entity manager
+	 * 
+	 * @param em
 	 */
 	@PersistenceContext
 	public void setEntityManager(EntityManager em) {
-		this.em = em;
+		this.entityManager = em;
 	}
 
+	/**
+	 * Returns the list of offices in the database
+	 * 
+	 * @return list of offices
+	 */
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Office> getOfficeList() {
-		return em.createQuery("select p from Office p order by p.officeID")
-				.getResultList();
+		return entityManager.createQuery(
+				"select p from Office p order by p.officeID").getResultList();
 	}
 
+	/**
+	 * Saves an office in the database
+	 * 
+	 * @param off
+	 */
 	@Transactional(readOnly = false)
 	public void saveOffice(Office off) {
-		em.merge(off);
+		entityManager.merge(off);
 	}
 
+	/**
+	 * Returns an office
+	 * 
+	 * @return office
+	 */
 	public Office getOffice() {
 		return office;
 	}
 
+	/**
+	 * Sets an office
+	 * 
+	 * @param office
+	 */
 	public void setOffice(Office office) {
 		this.office = office;
 	}
 
+	/**
+	 * Finds the office
+	 * 
+	 * @param id
+	 * @return office
+	 */
 	@Transactional(readOnly = true)
 	public Office findOffice(String id) {
 
-		return (Office) em
+		return (Office) entityManager
 				.createQuery("select o from Office o where o.officeID=" + id)
 				.getResultList().get(0);
 	}
 
+	/**
+	 * Returns the list of accounts of an office
+	 * 
+	 * @param officeID
+	 * @return the list of accounts
+	 */
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Account> getAccountList(String officeID) {
 
-		return em.createQuery(
+		return entityManager.createQuery(
 				"select a from Account a where a.officeID=" + officeID)
 				.getResultList();
 	}

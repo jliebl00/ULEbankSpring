@@ -21,7 +21,7 @@ public class BankHandler implements Handler {
 	private final String number;
 
 	/**
-	 * Create a new Bank handler
+	 * Creates a new Bank handler
 	 *
 	 * @param number
 	 *            ( The number )
@@ -45,7 +45,8 @@ public class BankHandler implements Handler {
 	}
 
 	/**
-	 *
+	 * toString method
+	 * 
 	 * @return ( Return the number)
 	 */
 	@Override

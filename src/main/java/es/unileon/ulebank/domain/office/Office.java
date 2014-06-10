@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 /**
  * 
- * @author patricia
+ * @author Patricia
  *
  */
 @Entity
@@ -21,18 +21,18 @@ public class Office implements Serializable {
 	/**
 	 * Id of the office
 	 */
-
 	@Id
 	@Column(name = "officeID")
 	private String officeID;
-
+	/**
+	 * Id of the bank
+	 */
 	@Column(name = "bankID")
 	private String bankID;
 
 	/**
 	 * The address of the office
 	 */
-
 	private String address;
 	/**
 	 * The balance of the office

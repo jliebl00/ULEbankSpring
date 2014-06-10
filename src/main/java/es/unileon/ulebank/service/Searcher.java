@@ -14,32 +14,48 @@ public class Searcher {
 	private static final Log LOGGER = LogFactory.getLog(Searcher.class
 			.getName());
 
-	private String address;
+	/**
+	 * The id
+	 */
 	private String id;
+	/**
+	 * The id of the office
+	 */
 	private String officeID;
 
+	/**
+	 * Returns the officeID
+	 * 
+	 * @return officeID
+	 */
 	public String getOfficeID() {
 		return officeID;
 	}
 
+	/**
+	 * Sets the officeID
+	 * 
+	 * @param officeID
+	 */
 	public void setOfficeID(String officeID) {
 		this.officeID = officeID;
 		LOGGER.info("Officeid set to " + officeID);
 	}
 
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		LOGGER.info("Address set to " + address);
-	}
-
+	/**
+	 * Returns the id
+	 * 
+	 * @return id
+	 */
 	public String getId() {
 		return this.id;
 	}
 
+	/**
+	 * Sets the id
+	 * 
+	 * @param id
+	 */
 	public void setId(String id) {
 		this.id = id;
 		LOGGER.info("Id set to " + id);

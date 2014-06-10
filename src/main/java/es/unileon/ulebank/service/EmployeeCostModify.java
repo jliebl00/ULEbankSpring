@@ -16,6 +16,9 @@ public class EmployeeCostModify {
 	private static final Log LOGGER = LogFactory
 			.getLog(EmployeeCostModify.class.getName());
 
+	/**
+	 * Cost
+	 */
 	@Min(0)
 	private double amount;
 

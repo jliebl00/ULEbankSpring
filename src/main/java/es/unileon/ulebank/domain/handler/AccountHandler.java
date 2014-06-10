@@ -8,13 +8,14 @@ import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
  */
 public class AccountHandler implements Handler {
 
-	@Override
-	public String toString() {
-		return numberAccount;
-	}
-
 	private String numberAccount;
 
+	/**
+	 * Creates the handler of the account
+	 * 
+	 * @param number
+	 * @throws MalformedHandlerException
+	 */
 	public AccountHandler(String number) throws MalformedHandlerException {
 		if (number.length() >= 0) {
 
@@ -37,20 +38,11 @@ public class AccountHandler implements Handler {
 		}
 	}
 
-	/**
-	 * Create a new AccountHandler
-	 *
-	 * @param office
-	 *            ( the office id )
-	 * @param bank
-	 *            ( the bank id )
-	 * @param accountNumber
-	 *            ( the account number )
-	 * @author runix
-	 * @throws MalformedHandlerException
-	 *             ( If the account number, office handler, or bank handler
-	 *             aren't correct )
-	 */
+	@Override
+	public String toString() {
+		return numberAccount;
+	}
+
 	public int compareTo(Handler another) {
 		return this.toString().compareTo(another.toString());
 	}

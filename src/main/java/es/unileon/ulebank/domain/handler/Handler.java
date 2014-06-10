@@ -1,5 +1,3 @@
-/* Application developed for AW subject, belonging to passive operations
- group.*/
 package es.unileon.ulebank.domain.handler;
 
 /**
@@ -19,8 +17,7 @@ public interface Handler {
 	public int compareTo(Handler another);
 
 	/**
-	 *
-	 * @return
+	 * toString method
 	 */
 	@Override
 	public String toString();

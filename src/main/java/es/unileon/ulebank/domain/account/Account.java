@@ -17,9 +17,15 @@ import es.unileon.ulebank.domain.handler.Handler;
 @Table(name = "Accounts")
 public class Account {
 
+	/**
+	 * Id of the account
+	 */
 	@Id
 	@Column(name = "accountID")
 	private String accountID;
+	/**
+	 * Id of the office
+	 */
 	private String officeID;
 
 	/**

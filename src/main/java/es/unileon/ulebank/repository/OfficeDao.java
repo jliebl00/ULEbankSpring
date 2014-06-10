@@ -5,19 +5,49 @@ import java.util.List;
 import es.unileon.ulebank.domain.account.Account;
 import es.unileon.ulebank.domain.office.Office;
 
-
 public interface OfficeDao {
+	/**
+	 * Returns the office list
+	 * 
+	 * @return the office list
+	 */
+	public List<Office> getOfficeList();
 
-    public List<Office> getOfficeList();
+	/**
+	 * Saves an office in the database
+	 * 
+	 * @param off
+	 */
+	public void saveOffice(Office off);
 
-    public void saveOffice(Office off);	
-    
-    public void setOffice(Office off);
-    
-    public Office getOffice();
-    
-    public Office findOffice(String id);
-	
+	/**
+	 * Sets an office
+	 * 
+	 * @param off
+	 */
+	public void setOffice(Office off);
+
+	/**
+	 * Returns an office
+	 * 
+	 * @return office
+	 */
+	public Office getOffice();
+
+	/**
+	 * Finds an office
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Office findOffice(String id);
+
+	/**
+	 * Returns the list of accounts of an office
+	 * 
+	 * @param officeID
+	 * @return the list of accounts
+	 */
 	public List<Account> getAccountList(String officeID);
 
 }
