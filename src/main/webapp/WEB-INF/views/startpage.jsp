@@ -2,32 +2,31 @@
 
 <html>
 
-<head>
-<title><fmt:message key="title" /></title>
-</head>
-<body>
-	<h1>
-		<fmt:message key="heading" />
-	</h1>
-	<p>
-		<fmt:message key="greeting" />
-		<c:out value="${model.now}" />
-	</p>
-	<h3>Options</h3>
-	<br>
-	<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
-	<br />
-	<a href="<c:url value="hello.htm"/> "> Show accounts from an office</a>
-	<br>
-	<br>
-	<h3>Categories:</h3>
-	<br>
-	<a href="<c:url value="assets.htm"/> "> Assets</a>
-	<br>
-	<a href="<c:url value="brokerage.htm"/> "> Brokerage</a>
-	<br>
-	<a href="<c:url value="liabilities.htm"/> "> Liabilities</a>
-	<br>
-	<a href="<c:url value="payments.htm"/> "> Payments</a>
-</body>
+	<head>
+		<style type="text/css">
+			<%@include file="/resources/css/style.css" %>
+	  	</style>
+		<title><fmt:message key="title" /></title>
+	</head>
+	
+	<body>
+		<header>
+			<a class="optionsHeader assets" href="<c:url value="assets.htm"/>" title="Assets"></a>
+			<a class="optionsHeader brockerage" href="<c:url value="brockerage.htm"/>" title="Brockerage"></a>
+			<a class="optionsHeader liabilities" href="<c:url value="liabilities.htm"/>" title="Liabilities"></a>
+			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
+		</header>
+		
+		<nav>
+			<ul>
+				<li>
+					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
+				</li>
+				<li>
+					<a href="<c:url value="hello.htm"/> "> Show accounts from an office</a>
+				</li>
+			</ul>
+		</nav>
+		
+	</body>
 </html>

@@ -13,10 +13,7 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-
-
-
-
+  
 	<display-name>ULEbankSpring</display-name>
 	<servlet>
 		<servlet-name>ulebank</servlet-name>

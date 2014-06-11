@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class StartController {
-	
-	@RequestMapping(value = "/startpage.htm")
+public class HomeController {
+
+	@RequestMapping(value = "/home.htm")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		return new ModelAndView("startpage");
+		
+		return new ModelAndView("home");
 	}
 
 }
