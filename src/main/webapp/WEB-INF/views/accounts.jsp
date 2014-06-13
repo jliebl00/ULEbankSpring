@@ -35,7 +35,6 @@
 		<div class="content">
 			<div class="headerContent">
 				<b class="titleContent"><fmt:message key="accounts" /></b>
-				<a class="searcherContent" href="<c:url value="searcher.htm"/>" title="Search office"></a>
 			</div>
 			<ul>
 				<c:forEach items="${model.accounts}" var="acco">
