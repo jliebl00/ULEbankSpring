@@ -81,7 +81,7 @@ public class SearcherController {
 	protected Searcher formBackingObject(HttpServletRequest request)
 			throws ServletException {
 		Searcher searcher = new Searcher();
-		searcher.setId("0000");
+		searcher.setId("Enter office id");
 		return searcher;
 	}
 

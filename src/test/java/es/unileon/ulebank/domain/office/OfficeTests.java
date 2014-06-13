@@ -22,7 +22,7 @@ public class OfficeTests {
 	@Test
 	public void testSetAndGetOfficeID() {
 		String testOfficeID = "1234";
-		assertEquals(testOfficeID, office.getIdOffice());
+		assertEquals(testOfficeID, office.getOfficeID());
 	}
 
 	@Test

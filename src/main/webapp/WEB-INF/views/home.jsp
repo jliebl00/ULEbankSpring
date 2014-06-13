@@ -10,7 +10,7 @@
 	</head>
 	
 	<body class="home" >
-		<div class="pantallaCompleta">
+		<div class="fullScreen">
 			<a class="enter" href="<c:url value="startpage.htm"/> ">Enter</a>
 		</div>
 	</body>

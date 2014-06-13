@@ -1,44 +1,58 @@
 <%@ include file="/WEB-INF/views/include.jsp"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<!DOCTYPE>
 <html>
-<head>
-<title><fmt:message key="title" /></title>
-<style>
-.error {
-	color: red;
-}
-</style>
-</head>
-<body>
-	<h1>
-		<fmt:message key="title" />
-	</h1>
-	<h3>
-		<fmt:message key="costmodify.heading" />
-	</h3>
 
+	<head>
+		<style type="text/css">
+			<%@include file="/resources/css/style.css" %>
+	  	</style>
+		<title><fmt:message key="title" /></title>
+	</head>
+	
+	<body>
+		<header>
+			<a class="backHome" href="<c:url value="startpage.htm"/>" title="Home"></a>
+			<a class="optionsHeader assets" href="<c:url value="assets.htm"/>" title="Assets"></a>
+			<a class="optionsHeader brokerage" href="<c:url value="brokerage.htm"/>" title="brokerage"></a>
+			<a class="optionsHeader liabilities" href="<c:url value="liabilities.htm"/>" title="Liabilities"></a>
+			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
+		</header>
+		
+		<nav>
+			<ul>
+				<li class="liMenu">
+					<a class="menu selected" href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify cost</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="content">
+			<div class="headerContent">
+				<b class="titleContent"><fmt:message key="costmodify" /></b>
+			</div>
+				<form:form method="post" commandName="employeeCostModify">
+				<ul>
+					<li>
+						<b>Previous employee cost: </b>
+					</li>
+					<li>
+						<%=request.getParameter("previous")%>
+					</li>
+					<li>
+						<b>New employee cost: </b>
+					</li>
+					<li>
+						<form:input path="amount" />
+						<form:errors path="amount" cssClass="error" />
+					</li>
+					<li>
+						<input type="submit" value="Execute">
+					</li>
+				</ul>
+			</form:form>
+		</div>
+	</body>
 
-	<form:form method="post" commandName="employeeCostModify">
-
-		<table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0"
-			cellpadding="5">
-			<br>
-			<td align="right" width="40%">Previous employee cost:</td>
-			<td align="right" width="20%"><%=request.getParameter("previous")%>E</td>
-			<br>
-
-
-			<tr>
-				<td align="right" width="40%">Modify employee cost :</td>
-				<td width="10%"><form:input path="amount" /></td>
-				<td width="60%"><form:errors path="amount" cssClass="error" />
-				</td>
-			</tr>
-		</table>
-		<br>
-		<input type="submit" value="Execute">
-	</form:form>
-	<a href="<c:url value="startpage.htm"/>">Home</a>
-</body>
 </html>

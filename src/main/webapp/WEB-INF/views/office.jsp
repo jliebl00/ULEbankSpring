@@ -1,56 +1,82 @@
 <%@ include file="/WEB-INF/views/include.jsp"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<!DOCTYPE>
 <html>
 
-
-<body>
-
-	<h1>
-		<fmt:message key="title" />
-	</h1>
-	<h3>Office</h3>
-
-
-	<b>Address: </b>
-	<c:out value="${model.office.address}" />
-	<br>
-	<b>Account: </b>
-	<c:out value="${model.office.account}" />
-	<br>
-	<b>Balance: </b>
-	<c:out value="${model.office.balance}" />
-	<br>
-	<b>Utilities costs: </b>
-	<c:out value="${model.office.utilitiesCost}" />
-	<br>
-	<b>Local costs: </b>
-	<c:out value="${model.office.localCost}" />
-	<br>
-	<b>Employee costs: </b>
-	<c:out value="${model.office.employeeCost}" />
-	<br>
-	<b>Total expenses: </b>
-	<c:out value="${model.office.totalExpenses}" />
-	<br>
-	<b>City: </b>
-	<c:out value="${model.office.city}" />
-	<br>
-	<b>PostCode: </b>
-	<c:out value="${model.office.postCode}" />
-	<br>
-	<b>Telephone: </b>
-	<c:out value="${model.office.telephone}" />
-	<br>
-	<br>
-	<br>
-	<br>
-	<a href="<c:url value="searcher.htm"/>">Searcher</a>
-	<br>
-	<a href="<c:url value="startpage.htm"/>">Home</a>
-	<br>
-	<a
-		href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify
-		Cost</a>
-	<br>
-</body>
+	<head>
+		<style type="text/css">
+			<%@include file="/resources/css/style.css" %>
+	  	</style>
+		<title><fmt:message key="title" /></title>
+	</head>
+	
+	<body>
+		<header>
+			<a class="backHome" href="<c:url value="startpage.htm"/>" title="Home"></a>
+			<a class="optionsHeader assets" href="<c:url value="assets.htm"/>" title="Assets"></a>
+			<a class="optionsHeader brokerage" href="<c:url value="brokerage.htm"/>" title="brokerage"></a>
+			<a class="optionsHeader liabilities" href="<c:url value="liabilities.htm"/>" title="Liabilities"></a>
+			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
+		</header>
+		
+		<nav>
+			<ul>
+				<li class="liMenu">
+					<a class="menu" href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify cost</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="content">
+			<div class="headerContent">
+				<b class="titleContent"><fmt:message key="office" /><c:out value=" ${model.office.officeID}" /></b>
+				<a class="searcherContent" href="<c:url value="searcher.htm"/>" title="Search office"></a>
+			</div>
+			<ul>
+				<li>
+					<b>Address: </b>
+					<c:out value="${model.office.address}" />
+				</li>
+				<li>
+					<b>Account: </b>
+					<c:out value="${model.office.account}" />
+				</li>
+				<li>
+					<b>Balance: </b>
+					<c:out value="${model.office.balance}" />
+				</li>
+				<li>
+					<b>Utilities costs: </b>
+					<c:out value="${model.office.utilitiesCost}" />
+				</li>
+				<li>
+					<b>Local costs: </b>
+					<c:out value="${model.office.localCost}" />
+				</li>
+				<li>
+					<b>Employee costs: </b>
+					<c:out value="${model.office.employeeCost}" />
+				</li>
+				<li>
+					<b>Total expenses: </b>
+					<c:out value="${model.office.totalExpenses}" />
+				</li>
+				<li>
+					<b>City: </b>
+					<c:out value="${model.office.city}" />
+				</li>
+				<li>
+					<b>PostCode: </b>
+					<c:out value="${model.office.postCode}" />
+				</li>
+				<li>
+					<b>Telephone: </b>
+					<c:out value="${model.office.telephone}" />
+				</li>
+			</ul>
+			
+		</div>
+	</body>
+	
 </html>

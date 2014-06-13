@@ -59,7 +59,7 @@ public class SimpleOfficeManager implements OfficeManager {
 		if (!offices.isEmpty()) {
 			while (found == false && i < offices.size()) {
 
-				if (offices.get(i).getIdOffice().compareTo(id) == 0) {
+				if (offices.get(i).getOfficeID().compareTo(id) == 0) {
 					found = true;
 					office = offices.get(i);
 				}

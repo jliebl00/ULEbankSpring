@@ -48,12 +48,12 @@ public class FindOfficeFormController {
 
 		Office office = officeDao.findOffice(idOffice);
 
-		myModel.put("accounts", officeDao.getAccountList(office.getIdOffice()));
+		myModel.put("accounts", officeDao.getAccountList(office.getOfficeID()));
 		myModel.put("id", officeID);
 		myModel.put("now", now);
 		myModel.put("offices", this.officeManager.getOffices());
 		System.out.println("oficina: " + office.toString());
-		if (officeDao.getAccountList(office.getIdOffice()) != null) {
+		if (officeDao.getAccountList(office.getOfficeID()) != null) {
 			return new ModelAndView("accounts", "model", myModel);
 		} else {
 			return new ModelAndView("hello", "offices", myModel);

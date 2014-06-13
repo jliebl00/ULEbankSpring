@@ -90,7 +90,7 @@ public class Office implements Serializable {
 	 * 
 	 * @return officeID
 	 */
-	public String getIdOffice() {
+	public String getOfficeID() {
 		return officeID;
 	}
 
@@ -99,7 +99,7 @@ public class Office implements Serializable {
 	 * 
 	 * @param officeID
 	 */
-	public void setIdOffice(String officeID) {
+	public void setOficeID(String officeID) {
 		this.officeID = officeID;
 	}
 

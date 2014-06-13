@@ -15,7 +15,7 @@
 	<h3>Offices</h3>
 	<c:forEach items="${model.offices}" var="offic">
 		<b>Identificador: </b>
-		<c:out value="${offic.idOffice}" />
+		<c:out value="${offic.officeID}" />
 		<i><b>Calle: </b>
 		<c:out value="${offic.address}" /></i>
 		<br>

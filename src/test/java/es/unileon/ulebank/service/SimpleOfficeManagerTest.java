@@ -74,10 +74,10 @@ public class SimpleOfficeManagerTest {
 		assertEquals(officeManager.getOffices().size(), 2);
 
 		Office office = offices.get(0);
-		assertEquals(office.getIdOffice(), "1234");
+		assertEquals(office.getOfficeID(), "1234");
 
 		Office office2 = offices.get(1);
-		assertEquals(office2.getIdOffice(), "2345");
+		assertEquals(office2.getOfficeID(), "2345");
 	}
 
 	/**
