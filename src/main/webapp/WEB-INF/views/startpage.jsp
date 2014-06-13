@@ -24,9 +24,6 @@
 				<li>
 					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
 				</li>
-				<li>
-					<a href="<c:url value="hello.htm"/> ">Show accounts from an office</a>
-				</li>
 			</ul>
 		</nav>
 	</body>

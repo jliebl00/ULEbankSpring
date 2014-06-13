@@ -20,6 +20,7 @@ import org.apache.commons.logging.LogFactory;
 
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.office.Office;
+import es.unileon.ulebank.repository.OfficeDao;
 import es.unileon.ulebank.service.*;
 
 /**
@@ -37,6 +38,9 @@ public class SearcherController {
 	@Autowired
 	private OfficeManager officeManager;
 
+	@Autowired
+	private OfficeDao officeDao;
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView onSubmit(@Valid Searcher searcher, BindingResult result)
 			throws OfficeNotFoundException {
@@ -59,6 +63,7 @@ public class SearcherController {
 			Office office = this.officeManager.searchOffice(id);
 			Map<String, Object> model = new HashMap<String, Object>();
 			model.put("office", office);
+
 
 			if (office != null) {
 				return new ModelAndView("office", "model", model);
