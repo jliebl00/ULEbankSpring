@@ -19,13 +19,13 @@
 			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
 		</header>
 		
-		<nav>
+		<nav class="menu">
 			<ul>
-				<li class="liMenu">
-					<a class="menu" href="<c:url value="officeslist.htm"/>">Search Offices</a>
+				<li>
+					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
 				</li>
-				<li class="liMenu">
-					<a class="menu" href="<c:url value="hello.htm"/> ">Show accounts from an office</a>
+				<li>
+					<a href="<c:url value="hello.htm"/> ">Show accounts from an office</a>
 				</li>
 			</ul>
 		</nav>

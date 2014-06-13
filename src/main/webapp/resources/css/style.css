@@ -1,4 +1,5 @@
 /********** GENERAL **********/
+
 body {
 	font-family: "Arial", Arial, sans-serif;
 }
@@ -36,8 +37,8 @@ header {
 	background-size: 100% 100% !important;
 }
 
-.optionsHeader:hover {
-	background-color: #F2E0F7;
+.optionsHeader:hover, .optionsHeaderSelected {
+	background-color: #F2E0F7 !important;
 }
 
 .assets {
@@ -59,7 +60,19 @@ header {
 	background: url("resources/img/payments.png");
 }
 
-nav {
+ul {
+	list-style: none;
+}
+
+li {
+	margin-top: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.menu {
 	position: absolute;
 	top: 300px;
 	left: 5px;
@@ -68,16 +81,16 @@ nav {
 	float: left;
 }
 
-ul {
-	list-style: none;
+.menu ul {
+	margin-bottom: 50px !important;
 }
 
-.liMenu {
+.menu ul li {
 	height: 60px;
 	margin-top: 3px !important;
 }
 
-.menu {
+.menu ul li a {
 	position: absolute;
 	width: 250px;
 	padding: 15px;
@@ -87,13 +100,11 @@ ul {
 	font: 18px Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
 	text-align: left;
 	color: #FFFFFF;
-	text-decoration: none;
 }
 
-.menu:hover, .selected {
-	background-color: #D232A2;
+.menu ul li a:hover, .selected {
+	background-color: #D232A2 !important;
 }
-
 .content {
 	position: absolute;
 	top: 310px;
@@ -129,10 +140,6 @@ ul {
     background-position: center center !important;
 	background-size: 100% 100% !important;
 	border-radius: 15px;
-}
-
-li {
-	margin-top: 10px;
 }
 
 /********** HOME **********/

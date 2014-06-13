@@ -20,10 +20,10 @@
 			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
 		</header>
 		
-		<nav>
+		<nav class="menu">
 			<ul>
-				<li class="liMenu">
-					<a class="menu" href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify cost</a>
+				<li>
+					<a href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify cost</a>
 				</li>
 			</ul>
 		</nav>

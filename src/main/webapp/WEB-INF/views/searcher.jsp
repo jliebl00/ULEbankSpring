@@ -20,17 +20,17 @@
 			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
 		</header>
 		
-		<nav>
+		<nav class="menu">
 			<ul>
-				<li class="liMenu">
-					<a class="menu selected" href="<c:url value="officeslist.htm"/>">Search Offices</a>
+				<li>
+					<a class="selected" href="<c:url value="officeslist.htm"/>">Search Offices</a>
 				</li>
 			</ul>
 		</nav>
 		
 		<div class="content">
 			<div class="headerContent">
-				<b class="titleContent"><fmt:message key="offices" /></b>
+				<b class="titleContent"><fmt:message key="searchOffice" /></b>
 				<a class="searcherContent" href="<c:url value="searcher.htm"/>" title="Search office"></a>
 			</div>
 			<ul>
