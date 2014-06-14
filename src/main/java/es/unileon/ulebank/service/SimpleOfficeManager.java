@@ -98,16 +98,18 @@ public class SimpleOfficeManager implements OfficeManager {
 	}
 		
 	
-	@Autowired
+	/**
+	 * Changes address of an office
+	 * @param address
+	 */
 	public void addressChange(String address) {
-    	List<Office> offices = officeDao.getOfficeList();
-        if (offices != null) {
-            for (Office offi : offices) {
-                String newAddress =  address;
-                offi.setAddress(newAddress);
-                officeDao.saveOffice(offi);
+    	Office office = officeDao.getOffice();
+        if (office != null) {
+            
+                office.setAddress(address);
+                officeDao.saveOffice(office);
             }
-        }
+        
 	}
 	/**
 	 * Searches an office in the officeDao with the officeId
