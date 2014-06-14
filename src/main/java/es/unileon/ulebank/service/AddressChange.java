@@ -1,8 +1,4 @@
-package es.unileon.ulebank.service;
-
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+ package es.unileon.ulebank.service;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

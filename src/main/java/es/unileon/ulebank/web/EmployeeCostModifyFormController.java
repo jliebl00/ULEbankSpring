@@ -19,8 +19,6 @@ import es.unileon.ulebank.service.OfficeManager;
  * Class handles requests to the page that changes the employee cost called
  * costmodify
  * 
- * @author rut
- * 
  */
 @Controller
 @RequestMapping(value = "/costmodify.htm")

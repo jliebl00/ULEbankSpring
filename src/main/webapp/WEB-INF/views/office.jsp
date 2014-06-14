@@ -25,7 +25,9 @@
 				<li>
 					<a href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify cost</a>
 				</li>
-				
+				<li>
+					<a href="<c:url value="addressChange.htm"/>">Modify address</a>
+				</li>
 				<li>
 					<a href="<c:url value="accounts.htm"/>">Show all accounts</a>
 				</li>

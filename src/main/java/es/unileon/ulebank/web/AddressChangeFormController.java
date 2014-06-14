@@ -38,7 +38,7 @@ public class AddressChangeFormController {
 
         productManager.addressChange(address);
 
-        return "redirect:/index.htm";
+        return "redirect:/office.htm";
     }
 
     @RequestMapping(method = RequestMethod.GET)
