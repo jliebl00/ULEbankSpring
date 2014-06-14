@@ -58,5 +58,10 @@ public interface OfficeManager extends Serializable {
 	 * @return office
 	 */
 	public Office findOffice(Handler id);
-
+	
+	/**
+	 * Sets new address to an office
+	 * @param address
+	 */
+	public void addressChange(String address);
 }

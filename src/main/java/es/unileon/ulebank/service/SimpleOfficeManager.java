@@ -96,7 +96,19 @@ public class SimpleOfficeManager implements OfficeManager {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+		
+	
+	@Autowired
+	public void addressChange(String address) {
+    	List<Office> offices = officeDao.getOfficeList();
+        if (offices != null) {
+            for (Office offi : offices) {
+                String newAddress =  address;
+                offi.setAddress(newAddress);
+                officeDao.saveOffice(offi);
+            }
+        }
+	}
 	/**
 	 * Searches an office in the officeDao with the officeId
 	 * 
@@ -105,5 +117,6 @@ public class SimpleOfficeManager implements OfficeManager {
 	public Office findOffice(Handler officeId) {
 		return officeDao.findOffice(officeId.toString());
 	}
+	
 
 }
