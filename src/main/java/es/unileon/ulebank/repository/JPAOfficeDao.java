@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import es.unileon.ulebank.domain.employee.Employee;
 import es.unileon.ulebank.domain.account.Account;
 import es.unileon.ulebank.domain.office.Office;
 
@@ -101,5 +102,17 @@ public class JPAOfficeDao implements OfficeDao {
 				"select a from Account a where a.officeID=" + officeID)
 				.getResultList();
 	}
+	
+	/**
+	 * Returns the list of employees of an office
+	 * 
+	 * @param officeID
+	 * @return the list of employees
+	 */
+    @Transactional(readOnly = true)
+    @SuppressWarnings("unchecked")
+    public List<Employee> getEmployeeList(String officeID) {
+        return entityManager.createQuery("select e from Employee e where e.officeID=" + officeID).getResultList();
+    }
 
 }

@@ -26,11 +26,6 @@ public class Office implements Serializable {
 	private String bankID;
 
 	/**
-	 * The account of the office
-	 */
-	private String account;
-
-	/**
 	 * The address of the office
 	 */
 	private String address;
@@ -62,7 +57,7 @@ public class Office implements Serializable {
 	 * The telephone of the office
 	 */
 	private String telephone;
-
+	
 	/**
 	 * Constructor of the class
 	 * 
@@ -95,6 +90,23 @@ public class Office implements Serializable {
 	 * Default constructor
 	 */
 	public Office() {
+	}
+
+	
+
+	public Office(String newOfficeID, String newBankID, String newAddress,
+			Double newBalance, double newLocalCost, double newUtilitiesCost,
+			double newEmployeeCost, String newCity, String newPostCode,
+			String newTelephone) {
+		this.officeID = newOfficeID;
+		this.bankID = newBankID;
+		this.address = newAddress;
+		this.balance = newBalance;
+		this.localCost = newLocalCost;
+		this.utilitiesCost = newUtilitiesCost;
+		this.employeeCost = newEmployeeCost;
+		this.city = newCity;
+		this.telephone = newTelephone;
 	}
 
 	/**
@@ -131,24 +143,6 @@ public class Office implements Serializable {
 	 */
 	public void setBankID(String bankID) {
 		this.bankID = bankID;
-	}
-
-	/**
-	 * Returns the account of the office
-	 * 
-	 * @return account
-	 */
-	public String getAccount() {
-		return account;
-	}
-
-	/**
-	 * Sets the account of the office
-	 * 
-	 * @param account
-	 */
-	public void setAccount(String account) {
-		this.account = account;
 	}
 
 	/**
@@ -294,7 +288,7 @@ public class Office implements Serializable {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-
+	
 	/**
 	 * Returns the total expenses
 	 * 

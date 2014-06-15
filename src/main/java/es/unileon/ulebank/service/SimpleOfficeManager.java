@@ -6,9 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import es.unileon.ulebank.domain.employee.Employee;
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.handler.Handler;
 import es.unileon.ulebank.domain.office.Office;
+import es.unileon.ulebank.repository.EmployeeDao;
 import es.unileon.ulebank.repository.OfficeDao;
 
 @Component
@@ -28,6 +30,10 @@ public class SimpleOfficeManager implements OfficeManager {
 	 */
 	@Autowired
 	private OfficeDao officeDao;
+	
+	@Autowired
+	private EmployeeDao employeeDao;
+	    
 
 	/**
 	 * Returns the offices list
@@ -77,7 +83,6 @@ public class SimpleOfficeManager implements OfficeManager {
 	 *            the amount
 	 * @throws OfficeNotFoundException
 	 */
-
 	public void employeeCostModify(double amount)
 			throws OfficeNotFoundException {
 
@@ -121,5 +126,48 @@ public class SimpleOfficeManager implements OfficeManager {
 	public Office findOffice(Handler officeId) {
 		return officeDao.findOffice(officeId.toString());
 	}
+
+	/**
+	 * Sets the employeeDao
+	 * 
+	 * @param employeeDao
+	 */
+	public void setEmployeeDao(EmployeeDao employeeDao) {
+		this.employeeDao = employeeDao;
+	}
+	
+	/**
+	 * Sets new office to an office
+	 * 
+	 * @param office
+	 *
+	 */
+	public void addOffice(Office office) {
+		officeDao.saveOffice(office);	
+	}
+	
+	/**
+	 * Sets new employee to an office
+	 * 
+	 * @param employee
+	 * @param office
+	 * @throws OfficeNotFoundException
+	 */
+	/*public void addEmployee(Employee employee, Office office) throws OfficeNotFoundException {
+		
+		if (office != null) {
+			employee.setOfficeID(office.getOfficeID());
+			
+			List<Employee> employees = office.getEmployees();
+			
+			employees.add(employee);
+			
+			office.setEmployees(employees);
+			
+			officeDao.saveOffice(office);	
+		} else
+			throw new OfficeNotFoundException("Cannot find the office");
+			
+	}*/
 
 }

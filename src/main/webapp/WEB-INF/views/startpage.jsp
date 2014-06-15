@@ -22,6 +22,9 @@
 		<nav class="menu">
 			<ul>
 				<li>
+					<a href="<c:url value="addoffice.htm"/>">Add Office</a>
+				</li>
+				<li>
 					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
 				</li>
 			</ul>
