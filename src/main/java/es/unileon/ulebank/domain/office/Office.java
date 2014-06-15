@@ -26,6 +26,11 @@ public class Office implements Serializable {
 	private String bankID;
 
 	/**
+	 * The account of the office
+	 */
+	private String account;
+	
+	/**
 	 * The address of the office
 	 */
 	private String address;
@@ -152,6 +157,24 @@ public class Office implements Serializable {
 	 */
 	public String getAddress() {
 		return address;
+	}
+	
+	/**
+	 * Returns the account of the office
+	 * 
+	 * @return account
+	 */
+	public String getAccount() {
+		return account;
+	}
+
+	/**
+	 * Sets the account of the office
+	 * 
+	 * @param account
+	 */
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	/**
