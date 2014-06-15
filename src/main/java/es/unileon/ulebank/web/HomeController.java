@@ -16,7 +16,7 @@ public class HomeController {
 	@RequestMapping(value = "/home.htm")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		
+
 		return new ModelAndView("home");
 	}
 

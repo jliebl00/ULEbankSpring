@@ -76,16 +76,17 @@ public class SimpleOfficeManager implements OfficeManager {
 	 * 
 	 * @param amount
 	 *            the amount
-	 * @throws OfficeNotFoundException 
+	 * @throws OfficeNotFoundException
 	 */
 
-	public void employeeCostModify(double amount) throws OfficeNotFoundException {
+	public void employeeCostModify(double amount)
+			throws OfficeNotFoundException {
 
 		Office office = officeDao.getOffice();
 		if (office != null) {
 			office.setEmployeeCost(amount);
 			officeDao.saveOffice(office);
-		}else
+		} else
 			throw new OfficeNotFoundException("Cannot find the office");
 	}
 
@@ -95,22 +96,24 @@ public class SimpleOfficeManager implements OfficeManager {
 	public Office getOffice() {
 		return officeDao.getOffice();
 	}
-	
+
 	/**
 	 * Changes address of an office
+	 * 
 	 * @param address
-	 * @throws OfficeNotFoundException 
+	 * @throws OfficeNotFoundException
 	 */
 	public void addressChange(String address) throws OfficeNotFoundException {
-    	Office office = officeDao.getOffice();
-        if (office != null) {
-            
-                office.setAddress(address);
-                officeDao.saveOffice(office);
-        }else
-        	throw new OfficeNotFoundException("Cannot find the office");
-        
+		Office office = officeDao.getOffice();
+		if (office != null) {
+
+			office.setAddress(address);
+			officeDao.saveOffice(office);
+		} else
+			throw new OfficeNotFoundException("Cannot find the office");
+
 	}
+
 	/**
 	 * Searches an office in the officeDao with the officeId
 	 * 
@@ -124,6 +127,5 @@ public class SimpleOfficeManager implements OfficeManager {
 	public List<Account> getAccountList(Handler officeID) {
 		return null;
 	}
-	
 
 }

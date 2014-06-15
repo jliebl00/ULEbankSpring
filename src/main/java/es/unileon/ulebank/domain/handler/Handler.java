@@ -1,6 +1,5 @@
 package es.unileon.ulebank.domain.handler;
 
-
 public interface Handler {
 
 	/**

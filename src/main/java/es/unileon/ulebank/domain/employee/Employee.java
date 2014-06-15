@@ -9,7 +9,7 @@ import es.unileon.ulebank.domain.handler.DNIHandler;
 import es.unileon.ulebank.domain.handler.Handler;
 
 @Entity
-@Table(name="employee") 
+@Table(name = "employee")
 public class Employee {
 
 	/**
@@ -36,12 +36,11 @@ public class Employee {
 	 * Identifier of the employee
 	 */
 	@Id
-    @Column(name = "employeeID")
+	@Column(name = "employeeID")
 	private String employeeID;
-	
-	
-	public Employee(){
-		
+
+	public Employee() {
+
 	}
 
 	/**
@@ -214,6 +213,5 @@ public class Employee {
 	public boolean isAdmin() {
 		return false;
 	}
-
 
 }

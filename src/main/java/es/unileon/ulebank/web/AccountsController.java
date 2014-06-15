@@ -27,14 +27,15 @@ public class AccountsController {
 
 	@Autowired
 	private OfficeDao officeDao;
-	
+
 	@RequestMapping(value = "/accounts.htm")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
 		Map<String, Object> model = new HashMap<String, Object>();
-		
-		model.put("accounts", officeDao.getAccountList(this.officeManager.getOffice().getOfficeID()));
+
+		model.put("accounts", officeDao.getAccountList(this.officeManager
+				.getOffice().getOfficeID()));
 		LOGGER.info("Returning accounts view");
 		return new ModelAndView("accounts", "model", model);
 	}

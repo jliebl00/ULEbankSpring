@@ -35,7 +35,7 @@ public class SearcherController {
 
 	@Autowired
 	private OfficeDao officeDao;
-	
+
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView onSubmit(@Valid Searcher searcher, BindingResult result)
 			throws OfficeNotFoundException {
@@ -58,7 +58,6 @@ public class SearcherController {
 			Office office = this.officeManager.searchOffice(id);
 			Map<String, Object> model = new HashMap<String, Object>();
 			model.put("office", office);
-
 
 			if (office != null) {
 				return new ModelAndView("office", "model", model);

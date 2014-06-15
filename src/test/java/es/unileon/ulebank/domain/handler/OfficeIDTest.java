@@ -32,14 +32,14 @@ public class OfficeIDTest {
 	public void testBadIdOffice() throws MalformedHandlerException {
 		new OfficeHandler(12345);
 	}
-        
-        /**
-         * Test if throw an exception when pass letters instead of numbers
-         */
-        @Test(expected = MalformedHandlerException.class)
-        public void testBadIdOfficeLetters() throws MalformedHandlerException{
-            new OfficeHandler("number");
-        }
+
+	/**
+	 * Test if throw an exception when pass letters instead of numbers
+	 */
+	@Test(expected = MalformedHandlerException.class)
+	public void testBadIdOfficeLetters() throws MalformedHandlerException {
+		new OfficeHandler("number");
+	}
 
 	/**
 	 * Test the builder
@@ -48,8 +48,8 @@ public class OfficeIDTest {
 	public void testIdOffice() throws MalformedHandlerException {
 		OfficeHandler id = new OfficeHandler(1234);
 		assertEquals(0, id.compareTo(oneIdOffice));
-                
-                id = new OfficeHandler("1234");
+
+		id = new OfficeHandler("1234");
 		assertEquals(0, id.compareTo(oneIdOffice));
 
 	}
@@ -58,11 +58,11 @@ public class OfficeIDTest {
 	 * Test the method getIdOffice()
 	 */
 	public void testGetIdOffice() {
-		 int id=oneIdOffice.getIdOffice();
-		 assertEquals(1234, id);
-		
-		 id=anotherIdOffice.getIdOffice();
-		 assertEquals(9876, id);
+		int id = oneIdOffice.getIdOffice();
+		assertEquals(1234, id);
+
+		id = anotherIdOffice.getIdOffice();
+		assertEquals(9876, id);
 	}
 
 	/**

@@ -87,7 +87,7 @@ public class SimpleOfficeManagerTest {
 		officeManager.setOfficeDao(new InMemoryOfficeDao(null, null));
 	}
 
-	@Test (expected = OfficeNotFoundException.class)
+	@Test(expected = OfficeNotFoundException.class)
 	public void testModifyCostWithNullOffice() throws OfficeNotFoundException {
 		try {
 			officeManager = new SimpleOfficeManager();
@@ -99,14 +99,13 @@ public class SimpleOfficeManagerTest {
 		}
 	}
 
-	@Test (expected = OfficeNotFoundException.class)
+	@Test(expected = OfficeNotFoundException.class)
 	public void testModifyCost() throws OfficeNotFoundException {
 
 		Office office = officeManager.searchOffice("1234");
 		office.setEmployeeCost(400.00);
 		assertEquals(400.00, office.getEmployeeCost(), 0);
 		officeManager.employeeCostModify(500.00);
-		
 
 	}
 

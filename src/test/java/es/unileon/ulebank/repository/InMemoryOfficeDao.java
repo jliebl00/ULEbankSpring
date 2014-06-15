@@ -23,7 +23,7 @@ public class InMemoryOfficeDao implements OfficeDao {
 	public void saveOffice(Office off) {
 	}
 
-	public void setOffice(Office off) {	
+	public void setOffice(Office off) {
 	}
 
 	public Office getOffice() {

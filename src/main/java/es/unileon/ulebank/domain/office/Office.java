@@ -75,7 +75,7 @@ public class Office implements Serializable {
 		this.officeID = officeID;
 		this.bankID = bank;
 	}
-	
+
 	/**
 	 * Constructor fo the class with this parameters
 	 * 
@@ -85,13 +85,14 @@ public class Office implements Serializable {
 	 * @param zip
 	 * @param idOffice
 	 */
-	public Office (String address, String telephone, String postCode, String idOffice){
-    	this.address = address;
-    	this.telephone = telephone;
-    	this.postCode = postCode;
-    	Handler id = new OfficeHandler(idOffice);
-    	this.officeID = idOffice;
-    }
+	public Office(String address, String telephone, String postCode,
+			String idOffice) {
+		this.address = address;
+		this.telephone = telephone;
+		this.postCode = postCode;
+		Handler id = new OfficeHandler(idOffice);
+		this.officeID = idOffice;
+	}
 
 	/**
 	 * Default constructor

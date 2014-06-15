@@ -22,19 +22,21 @@ public class EmployeeTest {
 	Office oneOffice;
 	Office anotherOffice;
 	float salary;
-        
+
 	@Before
-	public void setUp() throws MalformedHandlerException{
+	public void setUp() throws MalformedHandlerException {
 		salary = 5000;
-		
+
 		dni = new DNIHandler("71463395A");
 		anotherDNI = new DNIHandler("36167364W");
 
 		oneIdOffice = new OfficeHandler(1234);
 		anotherIdOffice = new OfficeHandler(9876);
 
-		oneOffice = new Office("Paseo San Antonio", "987400001", "24401", "1234");
-		anotherOffice = new Office("Plaza Espolol", "987402051", "24007", "9876");
+		oneOffice = new Office("Paseo San Antonio", "987400001", "24401",
+				"1234");
+		anotherOffice = new Office("Plaza Espolol", "987402051", "24007",
+				"9876");
 
 		oneEmployee = new Employee("name", "surname", "address", salary,
 				oneOffice.getOfficeID(), "71463395A");
@@ -101,7 +103,7 @@ public class EmployeeTest {
 		this.anotherEmployee.setOfficeID("0123");
 		assertEquals("0123", this.anotherEmployee.getOfficeID());
 	}
-	
+
 	/**
 	 * Test of getIdEmployee method, of class Employee.
 	 */
@@ -110,11 +112,11 @@ public class EmployeeTest {
 		Handler expResult = dni;
 		Handler result = new DNIHandler(oneEmployee.getEmployeeID());
 
-		assertTrue(expResult.compareTo(result)==0);
+		assertTrue(expResult.compareTo(result) == 0);
 
 		expResult = anotherDNI;
 		result = new DNIHandler(anotherEmployee.getEmployeeID());
-		assertTrue(expResult.compareTo(result)==0);
+		assertTrue(expResult.compareTo(result) == 0);
 	}
 
 	/**
@@ -126,7 +128,7 @@ public class EmployeeTest {
 		oneEmployee.setEmployeeID(idEmployee.toString().trim());
 
 		Handler result = new DNIHandler(oneEmployee.getEmployeeID());
-		
+
 		assertEquals(idEmployee.toString(), result.toString());
 	}
 
@@ -161,7 +163,6 @@ public class EmployeeTest {
 
 		assertEquals("surname", oneEmployee.getSurname());
 	}
-
 
 	/**
 	 * Test the method getSalary()

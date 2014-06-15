@@ -18,43 +18,44 @@ import es.unileon.ulebank.service.AddressChange;
 import es.unileon.ulebank.service.OfficeManager;
 
 @Controller
-@RequestMapping(value="/addressChange.htm")
+@RequestMapping(value = "/addressChange.htm")
 public class AddressChangeFormController {
 
-    /** Logger for this class and subclasses */
-    protected final Log logger = LogFactory.getLog(getClass());
+	/** Logger for this class and subclasses */
+	protected final Log logger = LogFactory.getLog(getClass());
 
-    @Autowired
-    private OfficeManager productManager;
+	@Autowired
+	private OfficeManager productManager;
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(@Valid AddressChange addressChange, BindingResult result) throws OfficeNotFoundException
-    {
-        if (result.hasErrors()) {
-            return "adressChange";
-        }
-		
-        String address = addressChange.getAddress();
-        logger.info("Address changed to  " + address);
+	@RequestMapping(method = RequestMethod.POST)
+	public String onSubmit(@Valid AddressChange addressChange,
+			BindingResult result) throws OfficeNotFoundException {
+		if (result.hasErrors()) {
+			return "adressChange";
+		}
 
-        productManager.addressChange(address);
+		String address = addressChange.getAddress();
+		logger.info("Address changed to  " + address);
 
-        return "redirect:/office.htm";
-    }
+		productManager.addressChange(address);
 
-    @RequestMapping(method = RequestMethod.GET)
-    protected AddressChange formBackingObject(HttpServletRequest request) throws ServletException {
-        AddressChange addressChange = new AddressChange();
-        
-        return addressChange;
-    }
+		return "redirect:/office.htm";
+	}
 
-    public void setOfficeManager(OfficeManager productManager) {
-        this.productManager = productManager;
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	protected AddressChange formBackingObject(HttpServletRequest request)
+			throws ServletException {
+		AddressChange addressChange = new AddressChange();
 
-    public OfficeManager getOfficeManager() {
-        return productManager;
-    }
+		return addressChange;
+	}
+
+	public void setOfficeManager(OfficeManager productManager) {
+		this.productManager = productManager;
+	}
+
+	public OfficeManager getOfficeManager() {
+		return productManager;
+	}
 
 }

@@ -1,6 +1,5 @@
 package es.unileon.ulebank.domain.handler;
 
-
 public class GenericHandler implements Handler {
 
 	/**

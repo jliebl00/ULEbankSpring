@@ -5,7 +5,6 @@ import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class BankHandler implements Handler {
 
 	/**
