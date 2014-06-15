@@ -106,9 +106,16 @@ CREATE TABLE IF NOT EXISTS `Cards` (
 --
 
 DROP TABLE IF EXISTS `Employees`;
-CREATE TABLE IF NOT EXISTS `Employees` (
-  `employeeID` varchar(32) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Empleados del banco';
+CREATE TABLE `Employees` (
+	`name` varchar(20) NOT NULL,
+	`surname` varchar(20) NOT NULL,
+	`address` varchar(30) NOT NULL,
+	`salary` FLOAT(2) NOT NULL,
+	`officeID` varchar(4) NOT NULL,
+	KEY (officeID),
+	`employeeID` varchar(9) NOT NULL,
+	PRIMARY KEY(`employeeID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Control: Empleados del banco';
 
 -- --------------------------------------------------------
 
@@ -418,6 +425,13 @@ ALTER TABLE `Cards`
   ADD CONSTRAINT `Cards_ibfk_2` FOREIGN KEY (`accountID`) REFERENCES `Accounts` (`accountID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Cards_ibfk_3` FOREIGN KEY (`emissionFee`) REFERENCES `LinearFees` (`feeID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `Cards_ibfk_4` FOREIGN KEY (`maintenanceFee`) REFERENCES `LinearFees` (`feeID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+  
+--
+-- Constraints for table `Cards`
+--
+ALTER TABLE `Employee`
+  ADD CONSTRAINT `office_employee_employee_employeeID` FOREIGN KEY (`officeID`) REFERENCES `Office`(`officeID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `HistoriesTransactions`
