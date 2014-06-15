@@ -430,8 +430,8 @@ ALTER TABLE `Cards`
 --
 -- Constraints for table `Cards`
 --
-ALTER TABLE `Employee`
-  ADD CONSTRAINT `office_employee_employee_employeeID` FOREIGN KEY (`officeID`) REFERENCES `Office`(`officeID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `Employees`
+  ADD CONSTRAINT `office_employee_employee_employeeID` FOREIGN KEY (`officeID`) REFERENCES `Offices`(`officeID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `HistoriesTransactions`
