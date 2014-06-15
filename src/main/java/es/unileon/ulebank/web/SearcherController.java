@@ -1,11 +1,13 @@
 package es.unileon.ulebank.web;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.apache.commons.logging.Log;
@@ -23,8 +25,12 @@ import es.unileon.ulebank.repository.OfficeDao;
 import es.unileon.ulebank.service.OfficeManager;
 import es.unileon.ulebank.service.Searcher;
 
+/**
+ * 
+ * @author Patricia
+ *
+ */
 @Controller
-@RequestMapping(value = "/searcher.htm")
 public class SearcherController {
 
 	/** Logger for this class and subclasses */
@@ -36,7 +42,7 @@ public class SearcherController {
 	@Autowired
 	private OfficeDao officeDao;
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/searcher.htm", method = RequestMethod.POST)
 	public ModelAndView onSubmit(@Valid Searcher searcher, BindingResult result)
 			throws OfficeNotFoundException {
 
@@ -76,12 +82,26 @@ public class SearcherController {
 		}
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value = "/searcher.htm", method = RequestMethod.GET)
 	protected Searcher formBackingObject(HttpServletRequest request)
 			throws ServletException {
 		Searcher searcher = new Searcher();
 		searcher.setId("Enter office id");
 		return searcher;
+	}
+
+	@RequestMapping(value = "/officeslist.htm", method = RequestMethod.GET)
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		String now = (new Date()).toString();
+		LOGGER.info("Returning officeslist view with " + now);
+
+		Map<String, Object> myModel = new HashMap<String, Object>();
+		myModel.put("now", now);
+		myModel.put("offices", this.officeManager.getOffices());
+
+		return new ModelAndView("officeslist", "model", myModel);
 	}
 
 	public void setOfficeManager(OfficeManager officeManager) {

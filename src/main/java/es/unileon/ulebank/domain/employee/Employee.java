@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import es.unileon.ulebank.domain.handler.DNIHandler;
-import es.unileon.ulebank.domain.handler.Handler;
-
 @Entity
 @Table(name = "employee")
 public class Employee {
@@ -62,7 +59,6 @@ public class Employee {
 		this.address = address;
 		this.salary = salary;
 		this.officeID = officeID;
-		Handler idEmployee = new DNIHandler(dniEmployee);
 		this.employeeID = dniEmployee;
 	}
 

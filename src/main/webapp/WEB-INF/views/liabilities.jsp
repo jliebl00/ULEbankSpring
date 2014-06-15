@@ -22,7 +22,7 @@
 		<nav class="menu">
 			<ul>
 				<li>
-					<a href="<c:url value=""/>">Opcion</a>
+					<a href="<c:url value="liabilitiesofficeslist.htm"/>">Offices list</a>
 				</li>
 				<li>
 					<a href="<c:url value=""/> ">Opcion</a>

@@ -17,7 +17,7 @@ public class AccountsControllerTest {
 		
 		assertEquals("accounts", modelAndView.getViewName());
 		assertNotNull(modelAndView.getModel());
-	
+
 	}
 
 }

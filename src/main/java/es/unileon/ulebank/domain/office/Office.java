@@ -7,9 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import es.unileon.ulebank.domain.handler.Handler;
-import es.unileon.ulebank.domain.handler.OfficeHandler;
-
 @Entity
 @Table(name = "Offices")
 public class Office implements Serializable {
@@ -78,7 +75,7 @@ public class Office implements Serializable {
 	}
 
 	/**
-	 * Constructor fo the class with this parameters
+	 * Constructor for the class with this parameters
 	 * 
 	 * @param name
 	 * @param street
@@ -91,7 +88,6 @@ public class Office implements Serializable {
 		this.address = address;
 		this.telephone = telephone;
 		this.postCode = postCode;
-		Handler id = new OfficeHandler(idOffice);
 		this.officeID = idOffice;
 	}
 
@@ -115,7 +111,7 @@ public class Office implements Serializable {
 	 * 
 	 * @param officeID
 	 */
-	public void setOficeID(String officeID) {
+	public void setOfficeID(String officeID) {
 		this.officeID = officeID;
 	}
 
