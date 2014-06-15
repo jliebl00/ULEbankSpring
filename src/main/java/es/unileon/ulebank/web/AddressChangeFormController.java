@@ -13,6 +13,7 @@ import javax.validation.Valid;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.service.AddressChange;
 import es.unileon.ulebank.service.OfficeManager;
 
@@ -27,7 +28,7 @@ public class AddressChangeFormController {
     private OfficeManager productManager;
 
     @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(@Valid AddressChange addressChange, BindingResult result)
+    public String onSubmit(@Valid AddressChange addressChange, BindingResult result) throws OfficeNotFoundException
     {
         if (result.hasErrors()) {
             return "adressChange";

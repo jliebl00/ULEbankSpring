@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.service.EmployeeCostModify;
 import es.unileon.ulebank.service.OfficeManager;
 
@@ -33,7 +34,7 @@ public class EmployeeCostModifyFormController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(@Valid EmployeeCostModify employeeCostModify,
-			BindingResult result) {
+			BindingResult result) throws OfficeNotFoundException {
 		if (result.hasErrors()) {
 			return "costmodify";
 		}

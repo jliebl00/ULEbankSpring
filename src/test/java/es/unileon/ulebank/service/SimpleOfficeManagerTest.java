@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.unileon.ulebank.domain.account.Account;
+import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.InMemoryOfficeDao;
 import es.unileon.ulebank.repository.OfficeDao;
@@ -80,48 +81,14 @@ public class SimpleOfficeManagerTest {
 		assertEquals(office2.getOfficeID(), "2345");
 	}
 
-	/**
-	 * @Test public void testGetAccounts() {
-	 * 
-	 *       OfficeDao officeDao = new InMemoryOfficeDao(offices, accounts);
-	 *       Office office = new Office(); office.setIdOffice("1234");
-	 * 
-	 *       OfficeHandler officeID = new OfficeHandler("1234"); //
-	 *       officeManager.getAccountList(officeID) Account account1 = new
-	 *       Account(); account1.setAccountID("0024");
-	 *       account1.setOfficeID("1234"); // accounts.add(account1);
-	 * 
-	 *       officeDao.setOffice(office);
-	 * 
-	 *       officeManager.setOfficeDao(officeDao);
-	 * 
-	 *       // List<Account> accounts1 =
-	 *       officeManager.getAccountList(officeID);
-	 *       assertNotNull(officeManager.getAccountList(new
-	 *       OfficeHandler("1234")));
-	 * 
-	 *       offices = officeDao.getOfficeList(); accounts =
-	 *       officeDao.getAccountList("1234");
-	 * 
-	 *       assertEquals(officeDao.getAccountList(officeID.toString()).size(),
-	 *       3); ; }
-	 * @Test public void testfindOffice() { OfficeHandler officeID = new
-	 *       OfficeHandler("1234"); try { officeManager = new
-	 *       SimpleOfficeManager(); officeManager.setOfficeDao(new
-	 *       InMemoryOfficeDao(null, null));
-	 * 
-	 *       officeManager.findOffice(officeID); } catch (Exception ex) {
-	 *       fail("Office list is empty."); } }
-	 */
 	@Test
 	public void testGetEmptyOffice() {
 		officeManager = new SimpleOfficeManager();
 		officeManager.setOfficeDao(new InMemoryOfficeDao(null, null));
-		// assertNull(officeManager.getOffice());
 	}
 
 	@Test
-	public void testModifyCostWithNullOffice() {
+	public void testModifyCostWithNullOffice() throws OfficeNotFoundException {
 		try {
 			officeManager = new SimpleOfficeManager();
 			officeManager.setOfficeDao(new InMemoryOfficeDao(null));
@@ -133,15 +100,13 @@ public class SimpleOfficeManagerTest {
 	}
 
 	@Test
-	public void testModifyCost() {
+	public void testModifyCost() throws OfficeNotFoundException {
 
 		Office office = officeManager.searchOffice("1234");
 		office.setEmployeeCost(400.00);
 		assertEquals(400.00, office.getEmployeeCost(), 0);
 		officeManager.employeeCostModify(500.00);
-		// double testEmployeeCost =
-		// officeManager.getOffice().getEmployeeCost();
-		// assertEquals(500.00, testEmployeeCost, 0);
+		
 
 	}
 

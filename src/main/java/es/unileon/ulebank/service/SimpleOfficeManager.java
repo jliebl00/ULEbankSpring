@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import es.unileon.ulebank.domain.account.Account;
+import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.handler.Handler;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.OfficeDao;
@@ -66,6 +67,7 @@ public class SimpleOfficeManager implements OfficeManager {
 				i++;
 			}
 		}
+		
 		officeDao.setOffice(office);
 		return office;
 	}
@@ -75,14 +77,17 @@ public class SimpleOfficeManager implements OfficeManager {
 	 * 
 	 * @param amount
 	 *            the amount
+	 * @throws OfficeNotFoundException 
 	 */
-	public void employeeCostModify(double amount) {
+
+	public void employeeCostModify(double amount) throws OfficeNotFoundException {
 
 		Office office = officeDao.getOffice();
 		if (office != null) {
 			office.setEmployeeCost(amount);
 			officeDao.saveOffice(office);
-		}
+		}else
+			throw new OfficeNotFoundException("Cannot find the office");
 	}
 
 	/**
@@ -101,14 +106,16 @@ public class SimpleOfficeManager implements OfficeManager {
 	/**
 	 * Changes address of an office
 	 * @param address
+	 * @throws OfficeNotFoundException 
 	 */
-	public void addressChange(String address) {
+	public void addressChange(String address) throws OfficeNotFoundException {
     	Office office = officeDao.getOffice();
         if (office != null) {
             
                 office.setAddress(address);
                 officeDao.saveOffice(office);
-            }
+        }else
+        	throw new OfficeNotFoundException("Cannot find the office");
         
 	}
 	/**

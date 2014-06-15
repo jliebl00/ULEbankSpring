@@ -5,6 +5,7 @@ import java.util.List;
 
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.domain.account.Account;
+import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.handler.Handler;
 
 /**
@@ -33,8 +34,9 @@ public interface OfficeManager extends Serializable {
 	 * Modifies the employeeCost
 	 * 
 	 * @param amount
+	 * @throws OfficeNotFoundException 
 	 */
-	public void employeeCostModify(double amount);
+	public void employeeCostModify(double amount) throws OfficeNotFoundException;
 
 	/**
 	 * Returns an office
@@ -62,6 +64,7 @@ public interface OfficeManager extends Serializable {
 	/**
 	 * Sets new address to an office
 	 * @param address
+	 * @throws OfficeNotFoundException 
 	 */
-	public void addressChange(String address);
+	public void addressChange(String address) throws OfficeNotFoundException;
 }
