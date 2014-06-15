@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author Patricia
  *
  */
-public class OfficeTests {
+public class OfficeTest {
 
 	private Office office;
 

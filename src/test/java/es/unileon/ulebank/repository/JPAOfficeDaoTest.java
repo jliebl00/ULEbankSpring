@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import es.unileon.ulebank.domain.office.Office;
 
-public class JPAOfficeDaoTests {
+public class JPAOfficeDaoTest {
 
 	private ApplicationContext context;
 	private OfficeDao officeDao;

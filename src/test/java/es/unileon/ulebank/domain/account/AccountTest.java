@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author Patricia
  *
  */
-public class AccountTests {
+public class AccountTest {
 
 	private Account account1;
 	private Account account2;

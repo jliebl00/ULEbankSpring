@@ -67,7 +67,6 @@ public class SimpleOfficeManager implements OfficeManager {
 				i++;
 			}
 		}
-		
 		officeDao.setOffice(office);
 		return office;
 	}

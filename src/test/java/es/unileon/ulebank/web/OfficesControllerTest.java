@@ -12,7 +12,7 @@ import es.unileon.ulebank.service.SimpleOfficeManager;
 import es.unileon.ulebank.repository.InMemoryOfficeDao;
 import es.unileon.ulebank.domain.office.Office;
 
-public class OfficesControllerTests {
+public class OfficesControllerTest {
 
 	@Test
 	public void testHandleRequestView() throws Exception {
