@@ -1,10 +1,6 @@
 package es.unileon.ulebank.domain.handler;
 
-/**
- * Handler pattern.
- * 
- * @author runix
- */
+
 public interface Handler {
 
 	/**

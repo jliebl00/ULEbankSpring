@@ -8,11 +8,6 @@ import org.junit.Test;
 
 import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
 
-/**
- * Test for the IdOffice class
- * 
- * @author Bertocastr
- */
 public class OfficeIDTest {
 
 	OfficeHandler oneIdOffice;

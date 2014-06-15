@@ -8,7 +8,6 @@ import es.unileon.ulebank.utils.DniLetters;
 
 /**
  * Identifies a person with the dni
- * @author Gonzalo Nicolas Barreales
  */
 public class DNIHandler implements Handler{
     

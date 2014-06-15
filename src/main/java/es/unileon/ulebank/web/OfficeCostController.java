@@ -21,8 +21,6 @@ import es.unileon.ulebank.service.OfficeManager;
  * Class that handles requests to the page that shows information about one
  * office
  * 
- * @author rut
- * 
  */
 @Controller
 public class OfficeCostController {

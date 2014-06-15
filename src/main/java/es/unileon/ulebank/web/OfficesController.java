@@ -18,11 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import es.unileon.ulebank.service.OfficeManager;
 
-/**
- * 
- * @author patricia
- *
- */
 @Controller
 public class OfficesController {
 

@@ -9,11 +9,6 @@ import javax.persistence.Table;
 
 import es.unileon.ulebank.domain.handler.*;
 
-/**
- * 
- * @author Patricia
- *
- */
 @Entity
 @Table(name = "Offices")
 public class Office implements Serializable {

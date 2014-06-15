@@ -1,10 +1,6 @@
 package es.unileon.ulebank.domain.handler;
 
-/**
- *
- * @author runix
- *
- */
+
 public class GenericHandler implements Handler {
 
 	/**

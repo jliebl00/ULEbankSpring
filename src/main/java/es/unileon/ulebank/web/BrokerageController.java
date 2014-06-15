@@ -15,11 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * 
- * @author Patricia
- *
- */
 @Controller
 public class BrokerageController {
 	private static final Log LOGGER = LogFactory.getLog(StartController.class
@@ -32,7 +27,6 @@ public class BrokerageController {
 		String now = (new Date()).toString();
 		LOGGER.info("Returning brokerage view");
 
-		// Cambiar el modelo para lo que queráis mostrar.
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);
 

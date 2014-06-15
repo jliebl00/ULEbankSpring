@@ -15,11 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * 
- * @author Patricia
- *
- */
 @Controller
 public class AssetsController {
 	private static final Log LOGGER = LogFactory.getLog(StartController.class

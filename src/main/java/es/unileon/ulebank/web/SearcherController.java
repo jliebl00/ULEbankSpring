@@ -23,11 +23,6 @@ import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.repository.OfficeDao;
 import es.unileon.ulebank.service.*;
 
-/**
- * 
- * @author Patricia
- *
- */
 @Controller
 @RequestMapping(value = "/searcher.htm")
 public class SearcherController {

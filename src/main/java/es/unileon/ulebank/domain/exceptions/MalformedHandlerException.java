@@ -3,9 +3,7 @@
 
 package es.unileon.ulebank.domain.exceptions;
 
-/**
- * @author Israel Garcia Centeno
- */
+
 public class MalformedHandlerException extends RuntimeException{
     
 	private static final long serialVersionUID = 1L;

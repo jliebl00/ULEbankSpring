@@ -14,7 +14,6 @@ public class InMemoryOfficeDao implements OfficeDao {
 	}
 
 	public InMemoryOfficeDao(List<Office> offices) {
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<Office> getOfficeList() {
@@ -24,23 +23,18 @@ public class InMemoryOfficeDao implements OfficeDao {
 	public void saveOffice(Office off) {
 	}
 
-	public void setOffice(Office off) {
-		// TODO Auto-generated method stub
-		
+	public void setOffice(Office off) {	
 	}
 
 	public Office getOffice() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public Office findOffice(String id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public List<Account> getAccountList(String officeID) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

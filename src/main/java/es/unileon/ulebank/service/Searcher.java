@@ -3,11 +3,6 @@ package es.unileon.ulebank.service;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-/**
- * 
- * @author patricia
- *
- */
 public class Searcher {
 
 	/** Logger for this class and subclasses */

@@ -95,12 +95,6 @@ public class SimpleOfficeManager implements OfficeManager {
 	public Office getOffice() {
 		return officeDao.getOffice();
 	}
-
-	public List<Account> getAccountList(Handler officeID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-		
 	
 	/**
 	 * Changes address of an office
@@ -124,6 +118,11 @@ public class SimpleOfficeManager implements OfficeManager {
 	 */
 	public Office findOffice(Handler officeId) {
 		return officeDao.findOffice(officeId.toString());
+	}
+
+	@Override
+	public List<Account> getAccountList(Handler officeID) {
+		return null;
 	}
 	
 

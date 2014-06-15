@@ -15,11 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * 
- * @author Patricia
- *
- */
+
 @Controller
 public class LiabilitiesController {
 	private static final Log LOGGER = LogFactory.getLog(StartController.class
@@ -32,7 +28,6 @@ public class LiabilitiesController {
 		String now = (new Date()).toString();
 		LOGGER.info("Returning liabilities view");
 
-		// Cambiar el modelo para lo que queráis mostrar.
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);
 

@@ -2,10 +2,7 @@ package es.unileon.ulebank.domain.handler;
 
 import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
 
-/**
- *
- * @author runix
- */
+
 public class AccountHandler implements Handler {
 
 	private String numberAccount;

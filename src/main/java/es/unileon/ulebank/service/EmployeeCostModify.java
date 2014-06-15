@@ -8,8 +8,6 @@ import org.apache.commons.logging.LogFactory;
 /**
  * Class that represents a modification in the employee costs
  * 
- * @author rut
- * 
  */
 public class EmployeeCostModify {
 	/** Logger for this class and subclasses */

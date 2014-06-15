@@ -3,11 +3,7 @@ package es.unileon.ulebank.domain.handler;
 import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
 import es.unileon.ulebank.domain.handler.Handler;
 
-/**
- * 
- * @author Patricia
- * 
- */
+
 public class OfficeHandler implements Handler {
 
 	/**

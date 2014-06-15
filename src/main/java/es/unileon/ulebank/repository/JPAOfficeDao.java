@@ -11,11 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.domain.account.Account;
 
-/**
- * 
- * @author Patricia
- *
- */
 @Repository(value = "officeDao")
 public class JPAOfficeDao implements OfficeDao {
 

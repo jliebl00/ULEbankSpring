@@ -8,11 +8,7 @@ import es.unileon.ulebank.domain.account.Account;
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.handler.Handler;
 
-/**
- * 
- * @author Patricia
- *
- */
+
 public interface OfficeManager extends Serializable {
 
 	/**

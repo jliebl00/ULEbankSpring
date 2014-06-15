@@ -12,10 +12,6 @@ import es.unileon.ulebank.domain.handler.Handler;
 import es.unileon.ulebank.domain.handler.OfficeHandler;
 import es.unileon.ulebank.domain.office.Office;
 
-/**
- * 
- * @author dorian
- */
 public class EmployeeTest {
 	Employee oneEmployee;
 	Employee anotherEmployee;

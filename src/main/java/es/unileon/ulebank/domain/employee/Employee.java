@@ -8,10 +8,6 @@ import javax.persistence.Table;
 import es.unileon.ulebank.domain.handler.DNIHandler;
 import es.unileon.ulebank.domain.handler.Handler;
 
-/**
- * 
- * @author dorian
- */
 @Entity
 @Table(name="employee") 
 public class Employee {

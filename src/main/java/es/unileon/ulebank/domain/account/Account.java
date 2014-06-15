@@ -8,11 +8,6 @@ import javax.persistence.Table;
 import es.unileon.ulebank.domain.handler.AccountHandler;
 import es.unileon.ulebank.domain.handler.Handler;
 
-/**
- *
- * @author runix
- */
-
 @Entity
 @Table(name = "Accounts")
 public class Account {

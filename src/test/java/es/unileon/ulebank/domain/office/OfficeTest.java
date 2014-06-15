@@ -5,11 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * 
- * @author Patricia
- *
- */
 public class OfficeTest {
 
 	private Office office;
