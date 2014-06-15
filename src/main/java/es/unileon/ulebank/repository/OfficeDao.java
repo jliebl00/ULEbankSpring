@@ -3,9 +3,11 @@ package es.unileon.ulebank.repository;
 import java.util.List;
 
 import es.unileon.ulebank.domain.account.Account;
+import es.unileon.ulebank.domain.employee.Employee;
 import es.unileon.ulebank.domain.office.Office;
 
 public interface OfficeDao {
+	
 	/**
 	 * Returns the office list
 	 * 
@@ -49,5 +51,12 @@ public interface OfficeDao {
 	 * @return the list of accounts
 	 */
 	public List<Account> getAccountList(String officeID);
+	
+	/**
+	 * Returns the employee list
+	 * 
+	 * @return the employee list
+	 */
+	public List<Employee> getEmployeeList(String officeID);
 
 }

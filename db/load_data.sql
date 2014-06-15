@@ -5,3 +5,6 @@ INSERT INTO Offices (officeID, bankID, account, address, balance, utilitiesCost,
 INSERT INTO Accounts(accountID, officeID, balance, lastLiquidationTime, liquidationFrequency, maxOverdraft) values ('0001','7654', 5.4,'2014-04-22 16:00:00', 4, 5.3);
 INSERT INTO Accounts(accountID, officeID, balance, lastLiquidationTime, liquidationFrequency, maxOverdraft) values ('0002','7654', 4.3,'2014-03-23 17:00:00', 4, 4.2);
 INSERT INTO Accounts(accountID, officeID, balance, lastLiquidationTime, liquidationFrequency, maxOverdraft) values ('0003','5678', 3.2,'2014-03-22 18:00:00', 4, 3.1);
+INSERT INTO Employees(employeeID, name, surname, address, salary, officeID) values ('71461175Z','Nadia', 'Aller','Address1', 1234.56, '5678');
+INSERT INTO Employees(employeeID, name, surname, address, salary, officeID) values ('71517234E','Alberto', 'Castro','Address2', 1234.56, '5678');
+INSERT INTO Employees(employeeID, name, surname, address, salary, officeID) values ('70876871W','Pablo', 'Carrasco','Address3', 1234.56, '7654');

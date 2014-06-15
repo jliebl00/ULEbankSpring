@@ -23,13 +23,16 @@
 		<nav class="menu">
 			<ul>
 				<li>
-					<a href="<c:url value="costmodify.htm?previous=${model.office.employeeCost}"/>">Modify cost</a>
+					<a href="<c:url value="costmodify.htm"/>">Modify cost</a>
 				</li>
 				<li>
 					<a href="<c:url value="addressChange.htm"/>">Modify address</a>
 				</li>
 				<li>
 					<a class="selected" href="<c:url value="accounts.htm"/>">Show all accounts</a>
+				</li>
+				<li>
+					<a href="<c:url value="employees.htm"/>">Show all employees</a>
 				</li>
 			</ul>
 		</nav>

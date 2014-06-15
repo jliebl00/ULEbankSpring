@@ -26,36 +26,30 @@
 					<a href="<c:url value="costmodify.htm"/>">Modify cost</a>
 				</li>
 				<li>
-					<a class="selected" href="<c:url value="addressChange.htm"/>">Modify address</a>
+					<a href="<c:url value="addressChange.htm"/>">Modify address</a>
 				</li>
 				<li>
 					<a href="<c:url value="accounts.htm"/>">Show all accounts</a>
 				</li>
 				<li>
-					<a href="<c:url value="employees.htm"/>">Show all employees</a>
+					<a class="selected" href="<c:url value="employees.htm"/>">Show all employees</a>
 				</li>
 			</ul>
 		</nav>
 		
 		<div class="content">
 			<div class="headerContent">
-				<b class="titleContent"><fmt:message key="addressChange" /></b>
+				<b class="titleContent"><fmt:message key="employees" /></b>
 			</div>
-			<form:form method="post" commandName="addressChange">
-				<ul>
-					<li>
-						<b>New address office: </b>
-					</li>
-					<li>
-						<form:input path="address" />
-						<form:errors path="address" cssClass="error" />
-					</li>
-					<li>
-						<input type="submit" value="Execute">
-					</li>
-				</ul>
-			</form:form>
+			<ul>
+				<c:forEach items="${model.employees}" var="empl">
+				<li>
+					<b>Name: </b>
+					<c:out value="${empl.name}" />
+				</li>
+				</c:forEach>
+			</ul>
 		</div>
 	</body>
-
+	
 </html>
