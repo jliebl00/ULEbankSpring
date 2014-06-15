@@ -7,7 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import es.unileon.ulebank.domain.handler.*;
+import es.unileon.ulebank.domain.handler.Handler;
+import es.unileon.ulebank.domain.handler.OfficeHandler;
 
 @Entity
 @Table(name = "Offices")

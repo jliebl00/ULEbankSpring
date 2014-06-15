@@ -1,9 +1,9 @@
 package es.unileon.ulebank.domain.handler;
 
-import es.unileon.ulebank.domain.handler.Handler;
-import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import es.unileon.ulebank.domain.exceptions.MalformedHandlerException;
 
 public class BankHandler implements Handler {
 

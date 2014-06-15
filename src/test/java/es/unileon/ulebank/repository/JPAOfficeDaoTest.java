@@ -1,8 +1,9 @@
 package es.unileon.ulebank.repository;
 
-import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;

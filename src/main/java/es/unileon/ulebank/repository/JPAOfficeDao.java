@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import es.unileon.ulebank.domain.office.Office;
 import es.unileon.ulebank.domain.account.Account;
+import es.unileon.ulebank.domain.office.Office;
 
 @Repository(value = "officeDao")
 public class JPAOfficeDao implements OfficeDao {

@@ -3,10 +3,9 @@ package es.unileon.ulebank.service;
 import java.io.Serializable;
 import java.util.List;
 
-import es.unileon.ulebank.domain.office.Office;
-import es.unileon.ulebank.domain.account.Account;
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.handler.Handler;
+import es.unileon.ulebank.domain.office.Office;
 
 public interface OfficeManager extends Serializable {
 
@@ -40,14 +39,6 @@ public interface OfficeManager extends Serializable {
 	 * @return office
 	 */
 	public Office getOffice();
-
-	/**
-	 * Returns the account list of an office
-	 * 
-	 * @param officeID
-	 * @return the list of accounts
-	 */
-	public List<Account> getAccountList(Handler officeID);
 
 	/**
 	 * Finds an office

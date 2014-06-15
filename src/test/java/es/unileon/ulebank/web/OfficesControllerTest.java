@@ -1,6 +1,7 @@
 package es.unileon.ulebank.web;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -8,9 +9,9 @@ import java.util.Map;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
-import es.unileon.ulebank.service.SimpleOfficeManager;
-import es.unileon.ulebank.repository.InMemoryOfficeDao;
 import es.unileon.ulebank.domain.office.Office;
+import es.unileon.ulebank.repository.InMemoryOfficeDao;
+import es.unileon.ulebank.service.SimpleOfficeManager;
 
 public class OfficesControllerTest {
 

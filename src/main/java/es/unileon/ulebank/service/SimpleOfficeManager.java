@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import es.unileon.ulebank.domain.account.Account;
 import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.domain.handler.Handler;
 import es.unileon.ulebank.domain.office.Office;
@@ -121,11 +120,6 @@ public class SimpleOfficeManager implements OfficeManager {
 	 */
 	public Office findOffice(Handler officeId) {
 		return officeDao.findOffice(officeId.toString());
-	}
-
-	@Override
-	public List<Account> getAccountList(Handler officeID) {
-		return null;
 	}
 
 }
