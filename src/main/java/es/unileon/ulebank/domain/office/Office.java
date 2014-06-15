@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import es.unileon.ulebank.domain.handler.*;
+
 /**
  * 
  * @author Patricia
@@ -78,6 +80,23 @@ public class Office implements Serializable {
 		this.officeID = officeID;
 		this.bankID = bank;
 	}
+	
+	/**
+	 * Constructor fo the class with this parameters
+	 * 
+	 * @param name
+	 * @param street
+	 * @param phone
+	 * @param zip
+	 * @param idOffice
+	 */
+	public Office (String address, String telephone, String postCode, String idOffice){
+    	this.address = address;
+    	this.telephone = telephone;
+    	this.postCode = postCode;
+    	Handler id = new OfficeHandler(idOffice);
+    	this.officeID = idOffice;
+    }
 
 	/**
 	 * Default constructor
