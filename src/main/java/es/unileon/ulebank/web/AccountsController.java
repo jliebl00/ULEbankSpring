@@ -35,7 +35,7 @@ public class AccountsController {
 		Map<String, Object> model = new HashMap<String, Object>();
 
 		model.put("accounts", officeDao.getAccountListOfOffice(this.officeManager
-				.getOffice().getOfficeID()));
+ 				.getOffice().getOfficeID()));
 		LOGGER.info("Returning accounts view");
 		return new ModelAndView("accounts", "model", model);
 	}

@@ -12,8 +12,8 @@ public class AddEmployee {
     private String surname;
     private String address;
     private float salary;
-    private String idenOffice;
-    private String dni;
+    private String officeID;
+    private String employeeID;
     
 
 	public String getName() {
@@ -51,21 +51,21 @@ public class AddEmployee {
 		this.salary = f;
 		logger.info("Salary set to " + f);
 	}
-	
-	public String getIdenOffice() {
-		return idenOffice;
+
+	public String getOfficeID() {
+		return officeID;
 	}
 
-	public void setIdenOffice(String idenOffice) {
-		this.idenOffice = idenOffice;
+	public void setOfficeID(String officeID) {
+		this.officeID = officeID;
 	}
 
-	public String getDni() {
-		return dni;
+	public String getEmployeeID() {
+		return employeeID;
 	}
 
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setEmployeeID(String employeeID) {
+		this.employeeID = employeeID;
 	}
-	
+		
 }

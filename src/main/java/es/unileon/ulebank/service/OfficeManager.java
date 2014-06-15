@@ -66,12 +66,11 @@ public interface OfficeManager extends Serializable {
 	public void setEmployeeDao(EmployeeDao employeeDao);
 
 	/**
-	 * Sets new address to an office
+	 * Add employee
 	 * 
 	 * @param employee
-	 * @param office
-	 * @throws OfficeNotFoundException
+	 * @throws OfficeNotFoundException 
 	 */
-	//public void addEmployee(Employee employee, Office office) throws OfficeNotFoundException;
+	public void addEmployee(Employee employee) throws OfficeNotFoundException;
 
 }

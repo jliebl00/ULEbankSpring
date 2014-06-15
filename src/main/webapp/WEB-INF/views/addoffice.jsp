@@ -26,6 +26,9 @@
 					<a class="selected" href="<c:url value="addoffice.htm"/>">Add Office</a>
 				</li>
 				<li>
+					<a href="<c:url value="addemployee.htm"/>">Add employee</a>
+				</li>
+				<li>
 					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
 				</li>
 			</ul>
@@ -43,13 +46,6 @@
 					<li>
 						<form:input path="officeID" />
 						<form:errors path="officeID" cssClass="error" />
-					</li>
-					<li>
-						<b>Bank id: </b>
-					</li>
-					<li>
-						<form:input path="bankID" />
-						<form:errors path="bankID" cssClass="error" />
 					</li>
 					<li>
 						<b>Address: </b>

@@ -22,7 +22,10 @@
 		<nav class="menu">
 			<ul>
 				<li>
-					<a href="<c:url value="addoffice.htm"/>">Add Office</a>
+					<a href="<c:url value="addoffice.htm"/>">Add office</a>
+				</li>
+				<li>
+					<a href="<c:url value="addemployee.htm"/>">Add employee</a>
 				</li>
 				<li>
 					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>

@@ -1,75 +1,93 @@
-<%@ include file="/WEB-INF/views/include.jsp" %>
+<%@ include file="/WEB-INF/views/include.jsp"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<!DOCTYPE>
 <html>
-<head>
-  <title><fmt:message key="title"/></title>
-  <style>
-    .error { color: red; }
-  </style>  
-</head>
-<body>
-<h1><fmt:message key="addemployee.heading"/></h1>
-<form:form method="post" commandName="addEmployee">
-  <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
-    <tr>
-      <td align="right" width="20%">Name:</td>
-        <td width="20%">
-          <form:input path="name"/>
-        </td>
-        <td width="60%">
-          <form:errors path="name" cssClass="error"/>
-        </td>
-    </tr>
-    <tr>
-      <td align="right" width="20%">Surname:</td>
-        <td width="20%">
-          <form:input path="surname"/>
-        </td>
-        <td width="60%">
-          <form:errors path="surname" cssClass="error"/>
-        </td>
-    </tr>
-    <tr>
-      <td align="right" width="20%">Address:</td>
-        <td width="20%">
-          <form:input path="address"/>
-        </td>
-        <td width="60%">
-          <form:errors path="address" cssClass="error"/>
-        </td>
-    </tr>
-    <tr>
-      <td align="right" width="20%">Salary:</td>
-        <td width="20%">
-          <form:input path="salary"/>
-        </td>
-        <td width="60%">
-          <form:errors path="salary" cssClass="error"/>
-        </td>
-    </tr>    
-    <tr>
-      <td align="right" width="20%">DNI:</td>
-        <td width="20%">
-          <form:input path="dni"/>
-        </td>
-        <td width="60%">
-          <form:errors path="dni" cssClass="error"/>
-        </td>
-    </tr> 
-     <tr>
-      <td align="right" width="20%">Id Office:</td>
-        <td width="20%">
-          <form:input path="idenOffice"/>
-        </td>
-        <td width="60%">
-          <form:errors path="idenOffice" cssClass="error"/>
-        </td>
-    </tr> 
-  </table>
-  <br>
-  <input type="submit" value="Execute">
-</form:form>
-<a href="<c:url value="hello.htm"/>">Home</a>
-</body>
+
+	<head>
+		<style type="text/css">
+			<%@include file="/resources/css/style.css" %>
+	  	</style>
+		<title><fmt:message key="title" /></title>
+	</head>
+	
+	<body>
+		<header>
+			<a class="backHome" href="<c:url value="startpage.htm"/>" title="Home"></a>
+			<a class="optionsHeader assets" href="<c:url value="assets.htm"/>" title="Assets"></a>
+			<a class="optionsHeader brokerage" href="<c:url value="brokerage.htm"/>" title="brokerage"></a>
+			<a class="optionsHeader liabilities" href="<c:url value="liabilities.htm"/>" title="Liabilities"></a>
+			<a class="optionsHeader payments" href="<c:url value="payments.htm"/>" title="Payments"></a>
+		</header>
+		
+		<nav class="menu">
+			<ul>
+				<li>
+					<a href="<c:url value="addoffice.htm"/>">Add Office</a>
+				</li>
+				<li>
+					<a class="selected" href="<c:url value="addemployee.htm"/>">Add employee</a>
+				</li>
+				<li>
+					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="content">
+			<div class="headerContent">
+				<b class="titleContent"><fmt:message key="addemployee" /></b>
+			</div>
+			<form:form method="post" commandName="addEmployee">
+				<ul>
+					<li>
+						<b>Employee id: </b>
+					</li>
+					<li>
+						<form:input path="employeeID" />
+						<form:errors path="employeeID" cssClass="error" />
+					</li>
+					<li>
+						<b>Name: </b>
+					</li>
+					<li>
+						<form:input path="name" />
+						<form:errors path="name" cssClass="error" />
+					</li>
+					<li>
+						<b>Surname: </b>
+					</li>
+					<li>
+						<form:input path="surname" />
+						<form:errors path="surname" cssClass="error" />
+					</li>
+					<li>
+						<b>Address: </b>
+					</li>
+					<li>
+						<form:input path="address" />
+						<form:errors path="address" cssClass="error" />
+					</li>
+					<li>
+						<b>Salary: </b>
+					</li>
+					<li>
+						<form:input path="salary" />
+						<form:errors path="salary" cssClass="error" />
+					</li>
+					<li>
+						<b>Office id: </b>
+					</li>
+					<li>
+						<form:input path="officeID" />
+						<form:errors path="officeID" cssClass="error" />
+					</li>			
+					<li>
+						<input type="submit" value="Execute">
+					</li>
+				</ul>
+			</form:form>
+		</div>
+	</body>
+	
 </html>

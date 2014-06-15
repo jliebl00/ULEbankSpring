@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.unileon.ulebank.domain.employee.Employee;
-import es.unileon.ulebank.domain.office.Office;
+import es.unileon.ulebank.domain.exceptions.OfficeNotFoundException;
 import es.unileon.ulebank.service.AddEmployee;
 import es.unileon.ulebank.service.OfficeManager;
 
@@ -28,7 +28,7 @@ public class AddEmployeeFormController {
     private OfficeManager officeManager;
 
     @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(@Valid AddEmployee addEmployee, BindingResult result)
+    public String onSubmit(@Valid AddEmployee addEmployee, BindingResult result) throws OfficeNotFoundException
     {
         if (result.hasErrors()) {
             return "addemployee";
@@ -38,29 +38,18 @@ public class AddEmployeeFormController {
         String surname = addEmployee.getSurname();
         String address = addEmployee.getSurname();
         float salary = addEmployee.getSalary();
-        String idEmployee = addEmployee.getDni();
-        Office o = new Office();
-    	/*o.setId("0001");
-        o.setName("nameOffice");
-        o.setStreet("streetOffice");
-        o.setZip(24080);
-        o.setPhone(987987987);
-        Employee employee = new Employee(name, surname, address, salary, o ,idEmployee);
-        officeManager.addEmployee(employee, o);*/
-        logger.info("Adding employee " + idEmployee + ".");
+        String employeeID = addEmployee.getEmployeeID();
+        String officeID = addEmployee.getOfficeID();
+        Employee employee = new Employee(name, surname, address, salary, officeID, employeeID);
+        officeManager.addEmployee(employee);
+        logger.info("Adding employee " + employeeID + ".");
         
-        return "redirect:/employees.htm";
+        return "redirect:/startpage.htm";
     }
-
+    
     @RequestMapping(method = RequestMethod.GET)
     protected AddEmployee formBackingObject(HttpServletRequest request) throws ServletException {
     	AddEmployee addEmployee = new AddEmployee();
-    	addEmployee.setName("nameEmployee3");
-    	addEmployee.setSurname("surnameEmployee3");
-    	addEmployee.setAddress("strstreetEmployee3");
-    	addEmployee.setSalary(3000.30f);
-    	addEmployee.setDni("71519821X");
-    	addEmployee.setIdenOffice("0001");
         return addEmployee;
     }
 

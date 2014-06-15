@@ -31,6 +31,9 @@ public class SimpleOfficeManager implements OfficeManager {
 	@Autowired
 	private OfficeDao officeDao;
 	
+	/**
+	 * EmployeeDao
+	 */
 	@Autowired
 	private EmployeeDao employeeDao;
 	    
@@ -150,24 +153,14 @@ public class SimpleOfficeManager implements OfficeManager {
 	 * Sets new employee to an office
 	 * 
 	 * @param employee
-	 * @param office
-	 * @throws OfficeNotFoundException
+	 * @throws OfficeNotFoundException 
+	 * 
 	 */
-	/*public void addEmployee(Employee employee, Office office) throws OfficeNotFoundException {
-		
-		if (office != null) {
-			employee.setOfficeID(office.getOfficeID());
-			
-			List<Employee> employees = office.getEmployees();
-			
-			employees.add(employee);
-			
-			office.setEmployees(employees);
-			
-			officeDao.saveOffice(office);	
+	public void addEmployee(Employee employee) throws OfficeNotFoundException {
+		if(officeDao.findOffice(employee.getOfficeID()) != null) {
+			employeeDao.saveEmployee(employee);
 		} else
 			throw new OfficeNotFoundException("Cannot find the office");
-			
-	}*/
+	}
 
 }

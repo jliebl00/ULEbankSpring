@@ -38,7 +38,7 @@ public class AddOfficeController {
         }
     	
         String officeID = addOffice.getOfficeID();
-        String bankID = addOffice.getBankID();
+        String bankID = "2104";
         String address = addOffice.getAddress();
         double balance = addOffice.getBalance();
         double localCost = addOffice.getLocalCost();
