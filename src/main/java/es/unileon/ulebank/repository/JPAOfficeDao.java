@@ -96,7 +96,7 @@ public class JPAOfficeDao implements OfficeDao {
 	 */
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
-	public List<Account> getAccountList(String officeID) {
+	public List<Account> getAccountListOfOffice(String officeID) {
 
 		return entityManager.createQuery(
 				"select a from Account a where a.officeID=" + officeID)

@@ -50,7 +50,7 @@ public interface OfficeDao {
 	 * @param officeID
 	 * @return the list of accounts
 	 */
-	public List<Account> getAccountList(String officeID);
+	public List<Account> getAccountListOfOffice(String officeID);
 	
 	/**
 	 * Returns the employee list
