@@ -1,7 +1,6 @@
 package es.unileon.ulebank.web;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,24 +20,23 @@ import es.unileon.ulebank.service.SimpleOfficeManager;
 @Controller
 public class EmployeeController {
 
-    protected final Log logger = LogFactory.getLog(getClass());
+	protected final Log logger = LogFactory.getLog(getClass());
 
-    @Autowired
-    private SimpleOfficeManager officeManager;
+	@Autowired
+	private SimpleOfficeManager officeManager;
 
-    @RequestMapping(value="/showAllEmployees.htm")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        logger.info("Returning showAllEmployees view");
+	@RequestMapping(value = "/showAllEmployees.htm")
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		logger.info("Returning showAllEmployees view");
 
-        Map<String, Object> myModel = new HashMap<String, Object>();
-        myModel.put("allEmployees", this.officeManager.getAllEmployees());
+		Map<String, Object> myModel = new HashMap<String, Object>();
+		myModel.put("allEmployees", this.officeManager.getAllEmployees());
 
-        return new ModelAndView("showAllEmployees", "model", myModel);
-    }
+		return new ModelAndView("showAllEmployees", "model", myModel);
+	}
 
-
-    public void setEmployeeManager(SimpleOfficeManager officeManager) {
-        this.officeManager = officeManager;
-    }
+	public void setEmployeeManager(SimpleOfficeManager officeManager) {
+		this.officeManager = officeManager;
+	}
 }
