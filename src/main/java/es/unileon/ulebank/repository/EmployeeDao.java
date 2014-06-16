@@ -19,6 +19,13 @@ public interface EmployeeDao {
 	 * @param employee
 	 */
     public void saveEmployee(Employee employee);
+    
+    /**
+     * 
+     * @param employeeID
+     * @return the employee who have this NIF
+     */
+    public Employee getEmployee(String employeeID);
 	
 }
 

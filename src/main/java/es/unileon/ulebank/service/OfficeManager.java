@@ -72,5 +72,19 @@ public interface OfficeManager extends Serializable {
 	 * @throws OfficeNotFoundException 
 	 */
 	public void addEmployee(Employee employee) throws OfficeNotFoundException;
+	
+	/**
+	 * 
+	 * @return a list with all employees in the database.
+	 */
+	public List<Employee> getAllEmployees();
+	
+	/**
+	 * Reallocate a employee into the new office.
+	 * 
+	 * @param employee employee to reallocate
+	 * @param newOfficeID
+	 */
+	public void reallocate(String employee, String newOfficeID);
 
 }

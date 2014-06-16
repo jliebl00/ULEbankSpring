@@ -115,4 +115,14 @@ public class JPAOfficeDao implements OfficeDao {
         return entityManager.createQuery("select e from Employee e where e.officeID=" + officeID).getResultList();
     }
 
+    /**
+     * 
+     * @return the list of all employees in the database.
+     */
+    @Transactional(readOnly = true)
+    @SuppressWarnings("unchecked")
+	public List<Employee> getAllEmployees(){
+		return entityManager.createQuery("select e from Employee e order by e.officeID").getResultList();
+	}
+
 }

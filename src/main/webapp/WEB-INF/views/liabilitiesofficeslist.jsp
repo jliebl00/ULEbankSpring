@@ -24,8 +24,9 @@
 
 	<nav class="menu">
 		<ul>
-			<li><a class="selected" href="<c:url value="officeslist.htm"/>">Search
-					Offices</a></li>
+			<li>
+				<a class="selected" href="<c:url value="officeslist.htm"/>">Search offices</a>
+			</li>
 		</ul>
 	</nav>
 

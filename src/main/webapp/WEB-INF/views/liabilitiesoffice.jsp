@@ -31,6 +31,9 @@
 				<li>
 					<a href="<c:url value="accounts.htm"/>">Show all accounts</a>
 				</li>
+				<li>
+					<a href="<c:url value="employees.htm"/>">Show all employees</a>
+				</li>
 			</ul>
 		</nav>
 		

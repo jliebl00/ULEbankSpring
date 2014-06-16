@@ -23,13 +23,16 @@
 		<nav class="menu">
 			<ul>
 				<li>
-					<a class="selected" href="<c:url value="addoffice.htm"/>">Add Office</a>
+					<a class="selected" href="<c:url value="addoffice.htm"/>">Add office</a>
 				</li>
 				<li>
 					<a href="<c:url value="addemployee.htm"/>">Add employee</a>
 				</li>
 				<li>
-					<a href="<c:url value="officeslist.htm"/>">Search Offices</a>
+					<a href="<c:url value="officeslist.htm"/>">Search offices</a>
+				</li>
+				<li>
+					<a href="<c:url value="showAllEmployees.htm"/>">Show all employees</a>
 				</li>
 			</ul>
 		</nav>

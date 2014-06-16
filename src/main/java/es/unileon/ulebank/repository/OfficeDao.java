@@ -58,5 +58,13 @@ public interface OfficeDao {
 	 * @return the employee list
 	 */
 	public List<Employee> getEmployeeList(String officeID);
+	
+	/**
+	 * 
+	 * @return a list with all employees in the database.
+	 */
+	public List<Employee> getAllEmployees();
+	
+	
 
 }

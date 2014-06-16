@@ -57,14 +57,14 @@ public class SimpleOfficeManagerTest {
 		account3.setOfficeID("2345");
 		accounts.add(account3);
 
-		OfficeDao officeDao = new InMemoryOfficeDao(offices, accounts);
+		OfficeDao officeDao = new InMemoryOfficeDao(offices, accounts, null);
 		officeManager.setOfficeDao(officeDao);
 	}
 
 	@Test
 	public void testGetOfficesWithNoOffices() {
 		officeManager = new SimpleOfficeManager();
-		officeManager.setOfficeDao(new InMemoryOfficeDao(null, null));
+		officeManager.setOfficeDao(new InMemoryOfficeDao(null, null, null));
 		assertNull(officeManager.getOffices());
 	}
 
@@ -84,29 +84,21 @@ public class SimpleOfficeManagerTest {
 	@Test
 	public void testGetEmptyOffice() {
 		officeManager = new SimpleOfficeManager();
-		officeManager.setOfficeDao(new InMemoryOfficeDao(null, null));
+		officeManager.setOfficeDao(new InMemoryOfficeDao(null, null, null));
 	}
 
 	@Test(expected = OfficeNotFoundException.class)
 	public void testModifyCostWithNullOffice() throws OfficeNotFoundException {
-		try {
-			officeManager = new SimpleOfficeManager();
-			officeManager.setOfficeDao(new InMemoryOfficeDao(null));
-			officeManager.employeeCostModify(200.00);
-
-		} catch (NullPointerException ex) {
-			fail("Office  is null.");
-		}
+		officeManager = new SimpleOfficeManager();
+		officeManager.setOfficeDao(new InMemoryOfficeDao(null));
+		officeManager.employeeCostModify(200.00);
 	}
 
-	@Test(expected = OfficeNotFoundException.class)
+	@Test
 	public void testModifyCost() throws OfficeNotFoundException {
-
 		Office office = officeManager.searchOffice("1234");
 		office.setEmployeeCost(400.00);
 		assertEquals(400.00, office.getEmployeeCost(), 0);
 		officeManager.employeeCostModify(500.00);
-
 	}
-
 }

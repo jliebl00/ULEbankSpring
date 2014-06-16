@@ -163,4 +163,24 @@ public class SimpleOfficeManager implements OfficeManager {
 			throw new OfficeNotFoundException("Cannot find the office");
 	}
 
+	/**
+	 * @return the list of the offices.
+	 */
+	public List<Employee> getAllEmployees() {
+		return officeDao.getAllEmployees();
+	}
+
+	/**
+	 * Modify the office of the employee
+	 * 
+	 * @param employeeID
+	 * 			Employee to reallocate.
+	 * @param newOfficeID
+	 */
+	public void reallocate(String employeeID, String newOfficeID) {
+		Employee employee = employeeDao.getEmployee(employeeID);
+		employee.setOfficeID(newOfficeID);
+		employeeDao.saveEmployee(employee);
+	}
+
 }

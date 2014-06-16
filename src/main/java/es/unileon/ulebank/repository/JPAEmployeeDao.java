@@ -36,7 +36,7 @@ public class JPAEmployeeDao implements EmployeeDao {
     @Transactional(readOnly = true)
     @SuppressWarnings("unchecked")
     public List<Employee> getEmployeeList() {
-        return entityManager.createQuery("select e from Employee e order by e.id").getResultList();
+        return entityManager.createQuery("select e from Employee e order by e.employeeID").getResultList();
     }
 
     /**
@@ -48,5 +48,16 @@ public class JPAEmployeeDao implements EmployeeDao {
     public void saveEmployee(Employee employee) {
         entityManager.merge(employee);
     }
+
+    /**
+     * 
+     * @param employeeID
+     * @return the employee who have this NIF
+     */
+    @Transactional(readOnly = true)
+    public Employee getEmployee(String employeeID) {
+		employeeID = employeeID.trim();
+		return (Employee) entityManager.createQuery("select e from Employee e where e.employeeID='"+employeeID+"'").getResultList().get(0);
+	}
 
 }

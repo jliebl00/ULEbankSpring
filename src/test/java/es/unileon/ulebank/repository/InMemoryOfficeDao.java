@@ -11,11 +11,21 @@ public class InMemoryOfficeDao implements OfficeDao {
 
 	private List<Office> officeList;
 	private List<Account> accountList;
+	private List<Employee> employeeList;
+	public List<Employee> getEmployeeList() {
+		return employeeList;
+	}
+
+	public void setEmployeeList(List<Employee> employeeList) {
+		this.employeeList = employeeList;
+	}
+
 	private Office office;
 
-	public InMemoryOfficeDao(List<Office> productList, List<Account> accountList) {
+	public InMemoryOfficeDao(List<Office> productList, List<Account> accountList, List<Employee> employeeList) {
 		this.officeList = productList;
 		this.accountList = accountList;
+		this.employeeList = employeeList;
 	}
 
 	public InMemoryOfficeDao(List<Office> offices) {
@@ -61,7 +71,6 @@ public class InMemoryOfficeDao implements OfficeDao {
 	}
 
 	public List<Account> getAccountListOfOffice(String officeID) {
-		System.out.println("el id: "+officeID);
 		ArrayList<Account> accounts = new ArrayList<Account>();
 		int count = 0;
 		while(count < this.getAccountList().size()){
@@ -74,7 +83,18 @@ public class InMemoryOfficeDao implements OfficeDao {
 	}
 
 	public List<Employee> getEmployeeList(String officeID) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Employee> employees = new ArrayList<Employee>();
+		int count = 0;
+		while(count < this.getEmployeeList().size()){
+			if(this.getEmployeeList().get(count).getOfficeID().compareTo(officeID)==0){
+				employees.add(this.getEmployeeList().get(count));
+			}
+			count++;
+		}
+		return employees;
+	}
+
+	public List<Employee> getAllEmployees() {
+		return this.getEmployeeList();
 	}
 }
